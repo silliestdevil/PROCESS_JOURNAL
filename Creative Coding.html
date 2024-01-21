@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Creative Computing</title>
+  
+  <link rel="stylesheet" href="global.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+  <meta charset="utf-8" />
+
+  <script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+      
+    </script>
+<script>
+    let letters = []; // Create an array to store letters
+    let delayFrames = 120; // 60 frames per second * 2 seconds
+    let addedW = false; // Flag to track if "W" has been added
+    let delayBetweenLetters = 30; // 60 frames per second * 1 second
+    let nextLetterTime = 0; // Track when to add the next letter
+    let lettersToAdd = ["R","E","A","T","I","V","E"," ","C","O","D","I","N","G"]; // Letters to add
+
+    function setup() {
+      let canvas = createCanvas(650, 100);
+      canvas.parent('sketch-c');
+      frameRate(60)
+      textSize(20); // Set the text size to 20
+      textFont('Courier new');
+    }
+
+    function draw(){
+      background(300);
+
+      if (frameCount < delayFrames && !addedW) {
+        letters.push("C"); // Add "W" only once
+        addedW = true; // Set the flag to indicate that "W" has been added
+        nextLetterTime = frameCount + delayBetweenLetters;
+      }
+
+      if (frameCount >= nextLetterTime && lettersToAdd.length > 0) {
+        letters.push(lettersToAdd.shift()); // Add the next letter from the array
+        nextLetterTime = frameCount + delayBetweenLetters;
+      }
+
+      const spacing = 20;
+      // Display the letters from the array
+      for (let i = 0; i < letters.length; i++) {
+        text(letters[i], 40 + i * spacing, 60);
+      }
+    }
+    </script>
+
+</head>
+
+<body>
+  <header>
+
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="Home.html">HOME</a>
+      <a href="#25/09/2023">WEEK 1</a>
+      <a href="#2/10/2023">WEEK 2</a>
+      <a href="#09/10/2023">WEEK 3</a>
+      <a href="#16/10/2023">WEEK 4</a>
+      <a href="#23/10/2023">WEEK 5</a>
+      <a href="#30/10/2023">WEEK 6</a>
+      <a href="#06/11/2023">WEEK 7</a>
+      <a href="#13/11/2023">WEEK 8</a>
+      <a href="#20/11/2023">WEEK 9</a>
+      <a href="#27/11/2023">WEEK 10</a>
+
+    </div>
+
+  <div class="topLine"></div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776; Content</button>
+    </div>
+     
+      <div id="sketch-c"></div> 
+      <p class="byline">
+        <i>Methods and Frameworks</i>
+      </p>
+
+    </header>
+      <main>
+      <p class="dateTitles" id="25/09/2023">WEEK 1: INTRODUCTION</p>
+      <p class="byline">
+        <i>25/09/2023</i>
+      </p>
+
+      <p class="generalText">We were introduced to the session through the theme of transformations. In small groups we used chatGPT to regenerate some form of work. My group decided to take the lyrics of Christina Perri's Jar of Hearts and generate it into a new song. First we got it to create lyrics from the themes within the song, we then got it to create a chord progression from these lyrics. We then generated the lyrics into morse code. We then recorded both the noise from the morse code, the chord progression and the lyrics putting it into logic and making an audio track. With lots of editing we managed to make a track that was bearable to listen to. I enjoyed experimenting with ChatGPT and discovering what the AI software can do as I have never used it before. 
+      </p>
+
+      <p class="now">
+        <a href=>
+         <h2>&#128366
+        </a>   
+        <a href=>
+       &#128253</h2>
+            </a>
+      </p>
+      <p class="bottom"></P> 
+
+      <p class="dateTitles" id="2/10/2023">WEEK 2: UNIT, WEB, HTML/CSS</p>
+      <p class="byline">
+        <i>2/10/2023</i>
+      </p>
+
+   <p class="subjectTitles">Introdcution to HTML and CSS</p>
+
+    <P class="generalText">We were introduced to the basics of HTML and CSS. This included us trying to code a basic online blog page which we will add to in further weeks. </P>
+<p class="subjectTitles">Basics</p>
+<p class="generalText">- Browsers are HTTP (Hypertext Transfer protocol) </p>
+<p class="generalText">- DNS servers gives IP Address </p>
+<p class="generalText">- The Main element is always the html element. The Head holds the settings. The body is the structure of the webpage </p>
+<p class="generalText">- Heading H1-H6 (size of font) in a hierarchy </p>
+<p class="generalText">- Opening tag ie. 
+<p class="generalText">"- indicates opening of a paragraph </p>
+<p class="generalText">- ! means Auto FIll </p>
+<p class="generalText">- <a> defines a hyperlink </p>
+<p class="generalText"> - ID and CLass - ID is a unique identifier however they can have the same class. IDs are often used to reference a class name or in a style </p>
+
+   <p class="now">
+      <a href=>
+       <h2>&#128366
+      </a>   
+      <a href=>
+     &#128253</h2>
+          </a>
+    </p>
+    <p class="bottom"></P> 
+
+<p class="dateTitles" id="09/10/2023">WEEK 3: VERSION CONTROL, JAVASCRIPT, DEBUGGING</p>
+<p class="byline">
+  <i>9/10/2023</i>
+</p>
+
+    <p class="subjectTitles">GitHub Introduction</p>
+
+    <p class="generalText">We were introduced to using Github. It is an open source distributed control system. It tracks all the modifications 
+    made within code; saving stages of projects and also reverts to specific versions of code if needed. It is good
+    for collaboration as it tracks code changes collectively and who made those changes. I found the software confusing, 
+    I can’t fully grasp how to upload code both privately and publicly.  I need to spend more time understanding how it fully works.</p>
+
+    <p class="subjectTitles">Key Terms</p>
+    <p class="generalText">Repository- A repository is like a project folder. Contain every single project file, documentation and history of each file. They can be public or private and have multiple collaborators. </p>
+    <p class="generalText">Commit - Similar to saving an updated file to its original folder where the files gets overwritten by a new file, However each commit records the saved data step by step. </p>
+    <p class="generalText">Clones - are copies of repositories.</p>
+    <p class="generalText">Fork - A copy of an existing repository where the new owner creates their own separate version while retaining the codebase history and connection to the original repository. </p>
+    <p class="generalText">Fetch - Fetching is the process of getting the latest changes from the online origin repository. </p>
+    <p class="generalText">Push - the process of sending your committed changes to a remorse repository. If you make changes locally you'll be able to push them to the remote repository so others can have access.</p>
+<P class="generalText">Pull - a command like getting the latest version of a project from the internet and updating your own copy. </P>
+
+<p class="subjectTitles">Core Programming Concepts</p>
+<p class="generalText">We looked at VARIABLES; The name of a storage location. Variables are used to store data and information in a computer program. We also looked at DATA TYPES; HTML for structure and content, CSS for presentation, JAVASCRIPT for styling. </p>
+<p class="generalText"> String: sequence of characters, double quotes, single quotes and backticks and Boolean: two types of values/information that represent true or false values. </p>
+
+<p class="subjectTitles">Javascript: Coding Alert Through Script Tag</p>
+<div class="left">
+<p class="generalText">We then learnt how to code an alert using the ‘onclick’ function through both an already existing internet browser using inspect as well as on our own HTML page. I found this quite simple.</p>
+</div>
+
+<div class="right">
+  
+  <pre>&nbsp;</pre>
+<button onclick="alert('You are CUTE')">Positive Affirmation</button></div>
+<pre>&nbsp;</pre>
+
+    <p class="right" class="now">
+      <a href=https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/83/58/835869761e22c353cd6d251b2ac671c0675d828c?response-content-disposition=inline%3B%20filename%3D%22Introduction%20to%20HTML%20%20CSS.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231024%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231024T105426Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21574&X-Amz-Signature=74644d0b521afe9f678c6abd5c1dcd0ab1ef8e3b86432201e60660a10c88e53c >
+       <h2>&#128366
+      </a>   
+      <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a560241f-869e-4b99-abb5-b08500de4b3d&instance=moodle>
+     &#128253</h2>
+          </a>
+    </p>
+
+    <p class="bottom"></P> 
+    
+    <p class="dateTitles" id="16/10/2023">WEEK 4: FRAMEWORKS and P5.JS</p>
+<p class="byline">
+  <i>16/10/2023</i>
+</p>
+  
+    <p class="subjectTitles">Javascript Behaviour</p>
+
+    <p class="generalText">We looked at the use of commenting throughout Javascript Code. Not only does it provide commentary on the functional 
+    elements of the code (as reminders and for accessibility for others) it also can be used in a poetic way or as 
+    a signature of work. You can also comment code that you might not want to currently use in your code but want to save. </p>
+    
+    <div class="left">
+    <p class="generalText">We also coded a button function that enabled us to change a title within our website. This can also be used as a behavior to change images etc as well. </p>
+  </div>
+
+    <div class="right">
+    <p id ="title"> Javascript </p>
+    
+<button onclick="document.getElementById('title')
+.textContent = 'New Title' ">Change Title </button>
+
+<button onclick="document.getElementById('title')
+.textContent = 'Javascript' ">Change Title Back</button>
+  <pre>&nbsp;</pre>
+</div>
+
+<p class="subjectTitles">Inventory</p>
+
+<p class="generalText">Notable artists mentioned in this week's inventory Software as Material for Cultural Production include Valentina Vuksic and the works 5voltcore.</p>
+
+<p class="subjectTitles">Introduction to P5JS </p>
+
+<p class="generalText">We were introduced to the basic functions of P5JS; it is a javascript library that runs through the function of setup() and draw(). As an introduction to the software I was eager to start to create some work and its ability to create interactive elements of a website. </p>
+
+<p class="subjectTitles">Key Terms</p>
+
+<P class="generalText">Untyped - can store any kind of data</P>
+<p class="generalText">Typed - can only store specific value types</p>
+<p class="generalText">Constants - cannot be changed later</p>
+<p class="generalText">Imperative - run on command</p>
+<p class="generalText">Event-driven - run in response to events</p>
+
+
+
+  <p class="now">
+    <a href=https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/d6/d7/d6d75003cbf6523896bfb22f89c2390932d7d9d7?response-content-disposition=inline%3B%20filename%3D%22JavascriptIntro.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231024%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231024T105404Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21596&X-Amz-Signature=87fc778fc0c2947e35f7b02ddcf170e731cb01dd4a4c9dc0ac50cfb4fffc5684 >
+     <h2>&#128366
+    </a>   
+    <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d7baf5cd-45f6-4209-917f-b08500de4b59&instance=moodle>
+   &#128253</h2>
+        </a>
+  </p>
+  <p class="bottom"></P> 
+
+  
+  <p class="dateTitles" id="23/10/2023"> WEEK 5: P5.JS CONTINUES AND ARRAYS</p>
+  <p class="byline">
+    <i>23/10/2023</i>
+  </p>
+
+    <p class="subjectTitles">PayWalls</p>
+<p class="generalText">
+  We briefly looked at the function of a paywall in websites and how this is coded through inspecting different 
+  websites. We looked at the overflow hidden systems used within the code to hide certain information, how these 
+  are coded and how to potentially get through them. This was just a brief introduction and something that I definitely 
+  will need to look back over in the future
+</p>    <pre>&nbsp;</pre>
+
+<div class="leftText">
+<p class="subjectTitles">P5.js (editing a previously made file)</p>
+  <pre>&nbsp;</pre>
+<p class="generalText">We learnt how to create a drawing in P5JS. This began with us editing the code of previously made drawing. I found 
+ this a bit overwhelming as I was just trying to get a grasp of what the code did and didn't manage to produce an 
+ image I found interesting from the original. I added new shapes to the drawing and by deleting the background from
+the function draw() which enabled the sketch to have a blurred effect. 
+</p></div>
+
+<iframe src="https://editor.p5js.org/charlotte_louiseyou/full/1QuTHAeU9" width="300" height="300"></iframe>
+
+<p class="subjectTitles">P5JS (learning how to use arrays)</p>
+<div class="leftText">
+<p class="generalText">We then learnt through the process of creating an array in P5JS in order to organize our code and speed up the 
+  process. We did this as a class through creating a sketch that allowed the user to click through a series of words
+  using the mousePressed function. Through doing this I began to understand the basic elements of javascript needed
+  in order to create a sketch. </p></div>
+  
+  <iframe src="https://editor.p5js.org/charlotte_louiseyou/full/hl7_Wfd8E"></iframe>
+  
+  <pre>&nbsp;</pre>
+  <div class="left">
+<p class="subjectTitles">P5JS (creating a sketch of my own for my Process Journal)</p>
+<pre>&nbsp;</pre>
+<p class="generalText">Introducing each letter by letter. This took a long process so I have created a list below:</p>
+  <p class="generalText">- Through examples, I learnt how to loop a letter coming in from one side of the page to another</p>
+  <p class="generalText">- This led me to a youtube video that explained how to display a letter in a set position. through using the mousePressed function however this was the same letter repeated</p>
+   <p class="generalText">- I then created an array for my letters which then enabled me to code a way for the muse click to present a different letter in an order each time</p>
+  <p class="generalText">- I removed the mousePressed function so the draw() function enabled the letters to automatically appear however they all appeared at once</p> 
+   <p class="generalText">- I then added a 2 second delay into my code through adding a ‘frame count’ variable and a ‘delay frames’ variable, by a statement that if the frame count is less then the delay frames, then to push the letter W. This enabled a delay between my first letter added but not the rest of the word</p>
+    <p class="generalText">- I set a flag so the letter W wouldn't be repeated (nor word). ‘addedW’ shows that the W has been added </p></div>
+    <div class="right">
+      <pre>&nbsp;</pre>
+      <pre>&nbsp;</pre>
+      <pre>&nbsp;</pre>
+   <p class="generalText">- I then added a ‘LettersToAdd’ array rather than ‘letters.push’ so all other letters are only shown once </p>
+   <p class="generalText">- I added a ‘nextLetterTime’ variable to track when to add the next letter and a ‘delayBetweenLetters’ frames to make the statement that the nextLetterTime = the delayBetweenLetters and the FrameCount </p>
+   <p class="generalText">- I added a ‘spacing’ variable to make sure the pixels in between the letters were the same </p>
+   <p class="generalText">- I finally embedded the P5JS into my HTML file and created a div in order to have control over where it is placed in the layout of my webpage </p></div>
+
+   <div class="right">
+    <pre>&nbsp;</pre>
+   <iframe src="https://editor.p5js.org/charlotte_louiseyou/full/kj22pI6tw" width="300" height="200"></iframe> <pre>&nbsp;</pre></div>
+
+   <p class="subjectTitles">The Unworkable Interface - Galloway</p>
+
+   <P class="generalText">Interface as a method</P>
+   <p class="generalText">The text explores the idea that there's a tension between the success of an interface and its invisibility, its success depends on how unnoticable it makes itself. There's an emergence of ‘ludic capitalism’ which withholds a return to romanticism and cybernetics. It combines poetry, design and labor in a form of play. Play is seen as a way to overcome systemic contradictions while tapping into the  ineffable aspects of human nature. The text's presents this idea that the methodology used to analyze contemporary ludic interfaces methodological cocktail itself serves as an interface.  </p>
+
+   <P class="generalText">Interfaces ii</P>
+   <p class="generalText">There are many definitions of interface from its association with screens to a gateway or passage to a place beyond or in computer science how one piece of code interacts with another. The concept of interface and medium collapse together as any format's identity is tied to its role as a container for another format. The concept of ‘threshold’ is emphasized suggesting that most media involve a transition moment in which the outside is evoked to make way for what happens inside. The interface is described as “being on the boundary”, it's not static it's always an effect, process or translation. </p>
+
+   <p class="generalText">Intraface iii</p>
+   <p class="generalText">The intraface is an internal interface that exists within the aesthetic realm of the image. It brings together the edge and the center creating a “Zone of indecision” where these elements co-exist. It's a way to transcend the limitations of previous interface theories and consider the dynamic interplay between the edge and the center in the aesthetic context. Moving away from the simple “window” interface it's more complex balancing elements of text, image and three-dimensional diegetic space. The intraface offers insight into contemporary life. The term "allegory" is introduced as a simpler way to describe this concept. This reinforces the interconnectedness of the three central themes: the structure of allegory, the intraface, and the dialectical relationship between culture and history.  </p>
+  
+   <p class="generalText">Regimes of Signification iv</p>
+   <p class="generalText">This section offers a framework for understanding the interplay between coherence and incoherence in both aesthetics and politics. The Coherent Aesthetic, Incoherent Aesthetic, Coherent PoliticsI and coherent Politics. It introduces regimes of signification, each characterized by a specific pairing of aesthetic and political attributes; Ethical Regime of Signification: In this regime, an aesthetic of incoherence aligns with a politics of coherence, Poetic Regime of Signification: Here, an aesthetic of coherence combines with a politics of incoherence and Regime of Ideology: In this regime, both the aesthetic and the politics align, displaying coherence in both areas. 
+    There is also Truth Regime: Both aesthetic and political aspects exhibit incoherence, associated with concepts of truth, nihilism, and radical alterity. This hierarchy can be historicized, revealing a shift in primacy from the ideological regime to the ethical regime in the contemporary age. Ideology has been replaced by simulation, and the computer is described as the ultimate ethical machine.</p>
+  
+    <p class="generalText">To conclude text the interface doesn't work and the difficulty lies in the fact that the interface does not admit its unworkability. There is always an intraface within the object, a tension between the aesthetic form of the work and the larger historical context in which it exists. The attempt to resolve this unworkability is what we call "writing," "image," or "object."</p>
+   
+    <p class="subjectTitles">Preload 3D Model P5.js </p>
+
+    <div class="leftText">
+    <p class="generalText">Using what we had been producing in P5.js I wanted to load a 3D model I had produced in blender. I exported my 3D model as an OBJ file and after altering the position and figuring out how to rotate the model so it animates to a spin I managed to get this work. IO also learnt how to preload textures and alter the stroke weight of the mesh lines. I still need to figure out if I can use light elements within the sketch so it has lighting. I did however got told that three.js is a better library to use preloaded 3D models in Javascript, however at the moment I find this platform a bit intimidation and am struggling to figure out how to use it</p></div>
+    <iframe src="https://editor.p5js.org/charlotte_louiseyou/full/cvAS53mfh" width="300" height="300"></iframe>
+   
+    <p class="now">
+      <a href=https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/8a/6b/8a6b73231dfb549b5ded5121734372d66de18351?response-content-disposition=inline%3B%20filename%3D%22Intro%20to%20p5.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231024%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231024T105139Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21561&X-Amz-Signature=f6089577ecbee15f143fb3935275ab5053a385b6cfafd76f21079d6ca657941e >
+       <h2>&#128366
+      </a>   
+      <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=481a5d5e-7089-4713-8357-b08500de4b70&instance=moodle>
+     &#128253</h2>
+          </a>
+    </p>
+    <p class="bottom"></P> 
+
+
+    <p class="dateTitles" id="30/10/2023"> WEEK 6: ARRAYS, CONDITIONALS AND LOOPS</p>
+    <p class="byline">
+      <i>30/10/2023</i>
+    </p>
+  
+    <p class="subjectTitles">P5JS mapping color of letters</p>
+<div class="leftText"><pre>&nbsp;</pre>
+    <p class="generalText"> I created a P5JS drawing that changes letters colors based on when the mouse is being positioned on the page. I did this through creating an array of letters and placed each letter at different sizes and positions on the page. I then created a console.log of the mouse and using the mapping tool scaled the mouse value to a range that goes through the color scale from 255 to 0. I feel pretty confident with arrays and found this part of the lecture quite easy.  </p></div>
+    <pre>&nbsp;</pre><iframe src="https://editor.p5js.org/charlotte_louiseyou/full/2BZoNwvdq" width="300" height="250"></iframe> <pre>&nbsp;</pre>
+
+    <p class="subjectTitles">P5JS Multiple lines </p>
+    <div class="leftText">
+  <P class="generalText">I created a shortened code that uses a loop to create multiple lines without having to individually code each one. This is a good way to simplify my code in the future and a quicker way of creating a sketch. </P></div>
+  <iframe src="https://editor.p5js.org/charlotte_louiseyou/full/s_aaADzUz"></iframe>
+
+    <p class="subjectTitles">P5JS Ambient Noise Levels Visualiser </p>
+    <div class="leftText">
+    <p class="subjectTitles">Step 1: Visuals </p> <pre>&nbsp;</pre><pre>&nbsp;</pre>
+    <p class="generalText">I created a code that randomly filled circles in an 8x8 grid using a looping system of randomly generated numbers. The conditional statement stated that if the number of the randomly generated number is less than 0.5, the fill function sets the circle color to a shade of red, otherwise it sets the circle to white. </p></div>
+    <pre>&nbsp;</pre><iframe src="https://editor.p5js.org/charlotte_louiseyou/full/SJELo1L-N" width="300" height="300"></iframe>
+
+    <p class="subjectTitles">Step 2: Microphone to Ambient Noise Levels</p>
+    <div class="leftText">
+    <p class="generalText">Using microphone audio input from my personal computer we created a sound level meter that displays city names based on audio input. The louder the audio input it matches the ambient noise levels from that city. mic.getLevel() retrieves the current audio level input. Const dBLevel = todB calculates the decibel level of the mic, adds 60 to account the mic level and adds an offset value from the dBa array. The loop goes through the dBa array and checks if each value is bigger than the dBLevel. If the dBa is bigger than the dBlevel the city name is assigned to the city variable and this is displayed on the screen. I found this really complicated and have to read back through. I am hoping this will make more sense when I complete the homework task. </p> </div>
+    <iframe src="https://editor.p5js.org/charlotte_louiseyou/full/BppkiLQ3F" width="300" height="300"></iframe></div>
+
+    <div class="leftText"></p><pre>&nbsp;</pre>
+    <p class="subjectTitles">Step 3: Combining the Elements <pre>&nbsp;</pre><pre>&nbsp;</pre>
+    <p class="generalText">I then combined the two codes so it had a combined visual element to audio input. It creates a visualization of the audio input through randomly coloured circles. The cities change as the audio changes. </p>  </div>
+    <pre>&nbsp;</pre> <iframe src="https://editor.p5js.org/charlotte_louiseyou/full/JgRPIOsY1" width="300" height="300"></iframe>
+
+    <p class="subjectTitles">Assignment 1: Invisible Radio</h4>
+    <P class="generalText">Design and imagine innovative interactions for an invisible radio by breaking free from conventional radio design constraints and exploring creative ways to interact with radio communication. </P>
+<P class="generalText">Task: A concise 3 min video that provides context for your work and demonstrates it. It needs a Title and a Github link to the working P5JS Project. </P>
+<p class="generalText">CONTEXTUALISATION: Examine radios in different contexts. INNOVATION IN INTERACTIONS: Rethink traditional radio functions such as changing channels and adjusting volume. Consider gesture-based controls, voice commands, environmental factors, and AI integration. ENVIRONMENTS: Imagine how the invisible radio can seamlessly blend into urban or natural surroundings. USER FEEDBACK: As the radio is 'invisible', consider how the user will receive feedback </p>
+<P class="generalText">Examples: Hertzian Landscapes, Eternal Blue, Energy Lab, Looking for God (Fernando Orellana), Dustbowl (Durell Bishop), The bits and bobs (Noga Shimshon), Plugg (Skrekkogle), Studio OIO Lockdown radio </P>
+
+<p class="subjectTitles">P5.js Letter Size based on audio input.</p>
+<div class="leftText">
+<p class="generalText">The homework was to create a code that used audio input to change the size of letters. The example given made each letter bigger based on the sound input. Taking the code created for the Ambient Noise Levels Visualiser earlier I coded a way for the letters to disappear based on the sound but not grow in size. Each letter is associated with a dBa rating the louder the audio input is, the letter disappears one by one; the end of the word is the hardest to disappear. I made this user friendly by making the letters get bigger one by one. I found this challenging to code. </p></div>
+
+<pre>&nbsp;</pre> <pre>&nbsp;</pre> <iframe src="https://editor.p5js.org/charlotte_louiseyou/full/arRkcfViB"></iframe><pre>&nbsp;</pre> 
+
+    <p class="now">
+      <a href=https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/fa/82/fa822a251d53903fd5351b96a8fe31570d7d5ddf?response-content-disposition=inline%3B%20filename%3D%22Conditionals%2C%20Loops%2C%20Arrays.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231030%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231030T210152Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21548&X-Amz-Signature=c0bf4885cc43fc247c05c545ae53eeb18b131c558267b7f7a3a08c051bdd194a> </a>   
+      <h2>&#128366
+      <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=1323fb1a-555d-414c-8bee-b08500de4b87&instance=moodle>
+     &#128253</h2>
+          </a>
+    </p>
+    <p class="bottom"></P> 
+
+    <p class="dateTitles" id="06/11/2023"> WEEK 7: NESTED LOOPS, MULTI-DIMENSIONAL ARRAYS, OJECTS & JSON</p>
+    <p class="byline">
+      <i>06/10/2023</i>
+    </p>
+
+    <p class="subjectTitles">Nested Loops</p>
+    <p class="generalText">We can put loops inside other loops - called nesting. easily nest loops inside other loops, we are repeating repeated tasks. Multiple for loops help us organize our repetitions in the right way for the task </p>
+
+    <p class="subjectTitles">P5.js Drawing Using loops</p>
+    <div class="leftText">
+    <p class="generalText">I tried to produce a P5JS drawing that changes certain circles in the grid to different colors creating a face. I needed to figure out a statement that allowed them to stay rather than redrawing each time. I want to work on this after class so it actually works. </p>
+<p class="generalText">I managed to complete this by creating an array of boolean true and false statements. These are linked to the different circles on the grid. I then made a loop that makes the true statements of the happy face array black. I then nested another loop within that states if the mouse is clicked then the sad face array circles are turned black. I found this challenging. When I’m coding I just struggle to know the language of what I need to put in. </p></div>
+<iframe src="https://editor.p5js.org/charlotte_louiseyou/full/-ngGdyFVE" width="300" height="300"></iframe>
+
+<pre>&nbsp;</pre>
+<p class="subjectTitles">Multi-dimensional arrays </p>
+<p class="generalText">Just like with nesting loops we can produce multiple pieces of data in arrays. When we want to match the shape of our data to the shape of our array. It Creates lists of lists. Let flagColors = [[‘red’, ‘blue’, ‘white’],[‘yellow’, ‘red’], [‘green’, ‘red’, ‘yellow’]]; </p>
+
+<p class="subjectTitles">Objects and JSON</h4>
+<p class="generalText"> Sometimes it makes more sense for our data to be given a name than an index. Objects are kinds of data that have named fields inside (properties). Unlike an array we can use these names to access data instead of indices.  </p>
+
+<p class="subjectTitles">GUI Elements </p>
+<p class="generalText">Graphical user interface a form of a user interface that allows users to interact with electronic devices through icons or other graphical elements. You can create these using any elements in P5JS ie slider, button, text input etc. When making your own you need to monitor the position of the mouse, a reference code is on the slide attached below. </p>
+<a href="CCI-Diploma23-CreativeCoding/week 7/GUI-Elements.pdf at main · IrtizaNasar/CCI-Diploma23-CreativeCoding (github.com)"></a>
+
+<p class="generalText"> We then looked at some examples of using arrays in more complex code. I have attached these below. </p>
+<a href="CCI-Diploma23-CreativeCoding/week 6 at main · IrtizaNasar/CCI-Diploma23-CreativeCoding (github.com)"></a>
+
+<p class="subjectTitles">The Unworkable Interface - Alexander R. Galloway</p>
+<div class="leftText"><p class="generalText">I saw an interface as a very 2 Dimensional aspect, just the connection between myself and a computer. This has altered my perception of it as almost a gateway or the edge of a boundary. It almost works as a liminal space that doesn’t understand itself. It has no context of itself or “consciousness” (in the way mankind depicts consciousness) which can cause a problematic stand or its workability. I find it interesting this obsession with the interface. The ‘interface’ has been an obsession of mankind for Millenia looking back at spiritual belief systems and the idea of your mind traveling to the space of the interface like in many Shamanic cultures. Through repetitive movements, chanting and the consumption of psychedelic drugs they traveled through an interface. I think this concept has had us captured for millenia. There is a rise of the interface in contemporary technology with the rise of technopaganism and not only our ethical regime tying to the computer but also it has become a religious belief system within itself . </p></div>
+<pre>&nbsp;</pre><pre>&nbsp;</pre><pre>&nbsp;</pre><img  src="assets/8Summary.png"  width="350" height="250"><pre>&nbsp;</pre><pre>&nbsp;</pre>
+
+<p class="now">
+  <a href=> </a> 
+  <h2>&#128366  
+  <a href=>
+ &#128253</h2>
+      </a>
+</p>
+<p class="bottom"></P> 
+
+<p class="dateTitles" id="13/11/2023"> WEEK 8: CSV AND API </p>
+<p class="byline">
+  <i>13/10/2023</i>
+</p>
+
+<div class="leftText"><pre>&nbsp;</pre>
+<p class="subjectTitles">CSV</p>
+<p class="generalText">CSV is a plain text format that represents tubular data as a sequence of text lines; data fields in CSV are separated by a specific character. The difference between JSON is there is no hierarchy in CSV flat of representing data. </p>
+<p class="generalText">We created a sketch that was based on CSV data and created different rows based on the data. I found this section easy to follow. It was  a very simple example. </p></div>
+<pre>&nbsp;</pre><iframe src="https://editor.p5js.org/charlotte_louiseyou/full/HhrLlXAmp" width="300" height="300"></iframe>
+
+<div class="leftText"><pre>&nbsp;</pre>
+<p class="subjectTitles">API and Serial Communication</p>
+<p class="generalText">Application programming interface - Is a set of rules and protocols that allows different software applications to communicate and interact with each other. I have attached a link below with API data examples.</p>
+<a src="https://hub.arcgis.com/datasets/28810cee6ab8400b8701e7e1fb9a9fc5/api?layer=7"></a>
+<p class="generalText">We then created a sketch using API data. This showed us how to organize the API data and console certain elements displayed when we inspected the site. This was confusing but I hope it will get simpler when I further use this i.e. through assignment 2. We then got shown an example of a P5.js drawing made through the API data on tsunamis. </p></div>
+<pre>&nbsp;</pre><iframe src="https://editor.p5js.org/charlotte_louiseyou/full/3w6BjNZi5" width="300" height="300"></iframe>
+
+<p class="subjectTitles">Assignment 1: Beautiful Data - A Plot Twist</p>
+
+<p class="generalText">Data visualization is an interdisciplinary field that involves the creation and study of visual representation of data. </p>
+<p class="generalText">Task: A concise 3 min video that provides context for your work and demonstrates it. It needs a Title and a Github link to the working P5JS Project. </p>
+<p class="generalText">Considerations</p>
+<p class="generalText">CONCEPTUAL EXPLORATION: Select a meaningful dataset and develop a concept that reveals patterns, stories or insights. INNOVATIVE REPRESENTATION: Think beyond the pen plotter, how can it be used in unconventional ways. Can it interact with water, light on digital screens, become part of a user interface in P5JS. </p>
+<p class="generalText">Examples: Automate Suminagashi, Digital Pheromes by Andres Acosta Blaschitz</p>
+
+<p class="now">
+  <a href=> </a> 
+  <h2>&#128366  
+  <a href= https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=a51ddce4-1a84-4a3d-8e84-b08500de4bd>
+ &#128253</h2>
+      </a>
+</p>
+<p class="bottom"></P> 
+  
+  <p class="dateTitles" id="20/11/2023"> WEEK 9: API'S, SERIAL COMMUNICATION AND PLOTTER</p>
+<p class="byline">
+  <i>20/10/2023</i>
+</p>
+
+<div class="leftText">
+  <p class="subjectTitles">Sound Based on Pitch P5.js</p>
+  <p class="generalText">I found a way to change the size of letters of a previous file I made using audio input and volume but through the pitch frequency. The higher the pitch the larger the font gets. I hope to use this code for the pen plotter and the arduino for my physical computing project. 
+    <a href=https://editor.p5js.org/p5/sketches/Sound:_FFT_Spectrum>Example code</a></p></div>
+  <div class="right"><iframe src="https://editor.p5js.org/charlotte_louiseyou/full/Y_LETWkbV" width="200" height="200"></iframe></div>
+  
+<div class="leftText">
+<p class="subjectTitles">Altered CSV P5.js</p>
+<p class="generalText">Based on our previous lesson, I presented CSV data through different circles, changing the x,y, w values based on both the data and numerical values. </p></div>
+<div class="right"><iframe src="https://editor.p5js.org/charlotte_louiseyou/full/HhrLlXAmp" width="200" height="200"></iframe></div>
+
+<p class="subjectTitles">Pen Plotter Practice</p>
+<p class="generalText">We then looked at examples of how to use the pen plotter. We created code for this using the JSON data we got regarding Tsunami data. This led me to think about how I'll continue with my pen plotting assessment. I plan to use the data from multiple audio inputs rather than JSON data to make art through sound. Hopefully this will work successfully. </p>
+
+<p class="subjectTitles">Assement 3</p>
+
+<P class="generalText">Fill out assesesmnet info</P>
+
+  <p class="now">
+    <a href=https://github.com/IrtizaNasar/CCI-Diploma23-CreativeCoding/tree/main/week%209> </a> 
+    <h2>&#128366  
+    <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=72de559d-33dd-48ae-9fad-b08500de4bed&instance=moodle>
+   &#128253</h2>
+        </a>
+  </p>
+  <p class="bottom"></P> 
+
+  <a class="subjectTitles" href="index.html">Home</a> </P>
+
+  <p class="dateTitles" id="27/11/2023"> WEEK 10: APPLIED WORKS</p>
+<p class="byline">
+  <i>27/10/2023</i>
+</p>
+
+<p class="subjectTitles">Applied Works</p>
+<p class="generalText">We had a talk from Applied Works. The company make lots of data visualizations using data based on environmental issues. The work often focuses on interactive design elements that create user friendly and clear explanations on data analysis. They gave advice on producing a project and gave us a series of questions to consider when coming up with a concept. </p>
+<p class="generalText">Who does the project aim to communicate to ?</p>
+<p class="generalText">What is the visual goal of data?</p>
+<p class="generalText">How can we use different attributes to represent different aspects of data?</p>
+<p class="generalText">How can physicalists help to experience data in a more poetic and emotional way? </p>
+<p class="generalText">How does the data interact with the audience, does it interact with you? </p>
+
+<p class="generalText"> We then got into groups and did a project on creating a physical visualization of a dataset. We are aiming to show participants deliberate use of time spent on certain social media apps compared to actual phone     usage on different apparent applications. We did this by comparing the screen time they would deliberately be able to use compared to the extra time they spent and what they could have done in that time because we wanted to show what people believe how much time they are consenting to spending.  We did this by displaying the distance the participants could have traveled through walking and different methods of transport over the period of time they are spending on their social media. </p>
+<p class="generalText">The talk from applied works made me think more about the possibilities of what I could potentially produce for my interface project for creative computing. </p>
+
+  <p class="now">
+    <a href=https://pitch.com/v/UAL-CCI-x-Applied-Works-iecxyd/be866bc2-5473-422a-8d41-79ca7908d999></a> 
+    <h2>&#128366  
+    <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=205cf0af-4117-4f2a-9fe1-b08500de4c03&instance=moodle>
+   &#128253</h2>
+        </a>
+  </p>
+  <p class="bottom"></P> 
+
+  <a class="subjectTitles" href="index.html">Home</a> </P>
+
+
+</main>
+</body>
+
+</html>

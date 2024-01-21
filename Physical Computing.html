@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Physical Computing</title>
+ 
+  <link rel="stylesheet" href="global.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+  <meta charset="utf-8" />
+  
+  <script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+      
+    </script>
+  <script>
+    let letters = []; // Create an array to store letters
+    let delayFrames = 120; // 60 frames per second * 2 seconds
+    let addedW = false; // Flag to track if "W" has been added
+    let delayBetweenLetters = 30; // 60 frames per second * 1 second
+    let nextLetterTime = 0; // Track when to add the next letter
+    let lettersToAdd = ["H","Y","S","I","C","A","L"," ","C","O","M","P","U","T","I","N","G"]; // Letters to add
+
+    function setup() {
+      let canvas = createCanvas(650, 100);
+      canvas.parent('sketch-container');
+      frameRate(60)
+      textSize(20); // Set the text size to 20
+      textFont('Courier new');
+    }
+
+    function draw(){
+      background(300);
+
+      if (frameCount < delayFrames && !addedW) {
+        letters.push("P"); // Add "W" only once
+        addedW = true; // Set the flag to indicate that "W" has been added
+        nextLetterTime = frameCount + delayBetweenLetters;
+      }
+
+      if (frameCount >= nextLetterTime && lettersToAdd.length > 0) {
+        letters.push(lettersToAdd.shift()); // Add the next letter from the array
+        nextLetterTime = frameCount + delayBetweenLetters;
+      }
+
+      const spacing = 20;
+      // Display the letters from the array
+      for (let i = 0; i < letters.length; i++) {
+        text(letters[i], 40 + i * spacing, 60);
+      }
+    }
+    </script>
+
+</head>
+
+<body>
+  <header>
+    <div id="mySidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      <a href="Home.html">HOME</a>
+      <a href="#26/09/2023">WEEK 1</a>
+      <a href="#3/10/2023">WEEK 2</a>
+      <a href="#10/10/2023">WEEK 3</a>
+      <a href="#17/10/2023">WEEK 4</a>
+      <a href="#24/10/2023">WEEK 5</a>
+      <a href="#31/10/2023">WEEK 6</a>
+      <a href="#07/11/2023">WEEK 7</a>
+      <a href="#14/11/2023">WEEK 8</a>
+      <a href="#21/11/2023">WEEK 9</a>
+      <a href="#21/11/2023">WEEK 10</a>
+    </div>
+  
+    <div class="topLine"></div>
+    <div id="main">
+      <button class="openbtn" onclick="openNav()">&#9776; CONTENT</button>
+    </div>
+  
+
+    <div id="sketch-container"></div> 
+    <p class="byline">
+      <i>Material Forms and Creative Computing</i>
+    </p>
+
+    </header>
+      <main>
+    <P class="dateTitles" id="26/09/2023">WEEK 1: INTRODUCTION</P>
+    <p class="byline">
+      <i>3/10/2023</i>
+    </p>
+
+    <p class="generalText">
+      Progressing from Monday's lesson we used chatGPT to come up with a concept for a design to use on the pen plotter. As a group we generated a type of a map that presented the distance we traveled to uni, how we traveled and the areas we lived through hex color values. We got these values through chatGPTs color coding of those areas/methods. The idea of the project sparked from wanting to present the bias behind AI databases. This was complicated and we didn't manage to complete it in the time frame that we had. However in the future I would like to do more research on the bias behind AI technology especially with its current significant position in contemporary society.
+      </p>
+
+    <p class="bottom"></P> 
+
+    <p class="dateTitles" id="3/10/2023">WEEK 2: ARDUINO</p>
+    <p class="byline">
+      <i>3/10/2023</i>
+    </p>
+
+    <p class="subjectTitles">Re-imagining Objects</p>
+
+    <p class="generalText">We looked at exploring a new behavior or creating a new interaction and how you can utilize an object in a different way. This feeds into our assessment that is due in January where we will have to produce a recontextualised object. </p>
+
+    <p class="subjectTitles">Bread Boards layout</p>
+    <P class="generalText">- All green lines are connected horizontally </P>
+    <p class="generalText">- Middle all connect vertically </p>
+    <p class="generalText">- The gutter in the middle; they are isolated without connection</p>
+
+    <p class="subjectTitles">Arduino</p>
+    <P class="generalText">It can only run one program </P>
+    <p class="generalText">Once it's received its code to receive another code you have to override the code or wipe it </p>
+    <p class="generalText">Don't take off plastic or foam as it can ruin board</p>
+
+    <p class="subjectTitles">LED Light - Turn OFF and ON </p>  
+
+    <div class="left">
+        
+    <p class="subjectTitles">Circuit</p>
+
+    <pre>
+    </pre>
+    
+    <img id="Circuit" src="assets/Screenshot (150).png" alt="circuit 2" width="300" height="173">
+
+    <pre>
+    </pre>
+
+    <p>
+    <button onclick="changeImage()">Next</button>
+    
+    <button onclick="changeimage2()">Previous</button>
+   </p>
+
+    <script>
+    function changeImage() {
+        var image = document.getElementById('Circuit');
+        image.src = 'assets/Screenshot (153).png'; // Replace 'new-image.png' with the path to the next image you want to display
+    }
+
+    function changeimage2() {
+        var image = document.getElementById('Circuit');
+        image.src = 'assets/Screenshot (150).png'; // Replace 'new-image.png' with the path to the next image you want to display
+    }
+    </script>
+    </div>
+
+    <div class="right">
+
+   <p class="subjectTitles">Code</p>
+  
+   <img id="Code" src="assets/Untitled-2.png" alt="circuit 2" width="300" height="225">
+
+
+   <p>
+    <button onclick="changeImage3()">Text Code</button>
+    
+    <button onclick="changeimage4()">Block Code</button>
+
+
+    <script>
+    function changeImage3() {
+        var image = document.getElementById('Code');
+        image.src = 'assets/Untitled-2.png'; // Replace 'new-image.png' with the path to the next image you want to display
+    }
+
+    function changeimage4() {
+        var image = document.getElementById('Code');
+        image.src = 'assets/Untitled-1.png'; // Replace 'new-image.png' with the path to the next image you want to display
+    }
+    </script>
+
+</div>
+
+<p class="generalText">We then learnt how to produce a circuit layout using Tinker Cad that used a resistor and an LED. I found this easy to produce as it was very simple but I am nervous about having to begin coding the circuits. </p>
+   
+    <P class="General">
+
+        <a class="subtitles" href="https://j3n-teaching.notion.site/Week-2-Arduino-101-7a3ab5c3058045f385350bbde1ac0ed7">
+          <h2>&#128366
+        </a>
+        <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=85cb3ffb-ffcc-496c-a8f2-b08500e1b087&instance=moodle>
+            &#128253</h2>
+              </a>
+
+<p class="bottom"></P> 
+            
+      
+  <P class="dateTitles" id="10/10/2023">WEEK 3: OUTPUTS</P>
+
+  <p class="byline">
+    <i>10/10/2023</i>
+  </p>
+
+    <p class="generalText">Using the circuit we produced last week. We created different code to change the state of the LED. </p>
+  
+    <div class = left>
+    <p class="subjectTitles">LED Light Intensity.</p>
+
+    <P class="generalText"> We created a code that used analogue write to place the light at different intensities of brightness. The values of analogwrite are in between 0-255, 0 being the dullest and 255 being the brightest. In between placing the light at these values the light had a 10 millisecond delay. </P>
+  </div>
+    <div class="right"> 
+
+      <p class="subjectTitles">Code</p>
+      
+      <img src= "assets/LED Intensity.png"  width="300" height="150">
+      
+      </div>
+
+      <div class="left">
+
+    <p class="subjectTitles">LED light Fading</p>
+
+    <p class="generalText">We then created a code that allowed the LED to fade. Using a ‘for’ loop it allows for the LED to gain and drop in intensity. As I wasn’t physically at the lesson this week at first I found it slightly confusing but as the weeks progress I'm sure it’ll make more sense. </p>
+  </div>
+    <div class="right"> 
+
+      <p class="subjectTitles" class="Subtitles">Code</p>
+      
+      <img src= "assets/LED Fade.png"  width="300" height="150">
+      
+      </div>
+
+      <a href=https://j3n-teaching.notion.site/Week-3-Outputs-d01565940f914bf9a6ea0ac8b0b0fe32 >
+      <h2>&#128366 </a>
+    <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=d0f0daed-30a5-4517-901f-b08500e1b0a5&instance=moodle>
+      &#128253</h2>
+        </a>
+
+   <p class="bottom"></P> 
+      
+
+  <P class="dateTitles" id="17/10/2023">WEEK 4: INPUTS</P>
+  <p class="byline">
+    <i>17/10/2023</i>
+  </p>
+
+  <p class="subjectTitles">Variables</p>
+  <p class="generalText">Variables are names we give to values we want to store. Eg: `int pin = 13;`. These values may take the form of varying different data types.</p>
+
+  <p class="subjectTitles">Potentinometer</p>  
+        
+  <div class="left"> 
+
+    <p class="subjectTitles">Circuit</p>
+    
+    <img src= "assets/1710E.png"  width="300" height="150">
+    
+    </div>
+    
+    <div class="right">
+
+      <p class="subjectTitles">Code</p>
+      
+      <img src= "assets/1710D.png"  width="300" height="150">
+      
+      </div>
+
+
+<P class="generalText">We coded a serial monitor on tinker cad and then in arduino that allows us to see if the potentiometer is working. The mapping aspect of the code I found complicated. </P>
+
+<p class="subjectTitles">Button to Turn LED ON and OFF</p>  
+
+<div class="left"> 
+
+<p class="subjectTitles">Circuit</p>
+
+<img src= "assets/1710button.png"  width="300" height="150">
+
+</div>
+
+<div class="right">
+
+<p class="subjectTitles">Code</p>
+
+<img src= "assets/1710buttoncode.png"  width="300" height="150">
+
+</div>
+
+<p class="generalText">I then coded how to use a button to turn a light switch on and off. The difficulty of the task was coding a way for the light to come on when you press the button once and off when you press the button again. I did this by declaring two integer variables. I found it really challenging to figure out how to write the code.</p>
+
+<p class="now">
+    <a href=https://j3n-teaching.notion.site/Week-04-Inputs-41e98ece002e408ab14effffbeecc5ad >
+     <h2>&#128366
+    </a>   
+    <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=fc213164-91f2-492d-87fa-b08500e1b0c1&instance=moodle>
+   &#128253</h2>
+        </a>
+  </p>
+  <p class="bottom"></P> 
+  
+  <p Class="dateTitles" id="24/10/2023">WEEK 5: SENSORS</P> 
+  <p class="byline">
+    <i>24/10/2023</i>
+  </p>
+
+  <p class="subjectTitles">Interaction Design Theory</p>
+
+  <p class="generalText">We looked at Brett Victors, ‘Picture Under Glass’ and its commentary on the sacrifice of working without hands and the visual facade that goes along with it. His work on ‘Dynamic Land’ I found really interesting. It is a computer that's in the ceiling that is shown onto scrap paper. The idea behind the computer is that it's interactive, using physical objects to play games etc. I like the way it creates community through technology and this is something I'd like to work towards.</p>
+<p class="generalText">We also looked at Bill Verplank, ‘Interaction Design Framework’. This has helped me think about a bit of a process while thinking of ideas of what I might want to produce and how to execute. At this moment I still have no idea what I want to produce and am focusing on understanding the skills we are being taught in lessons. </p>
+
+<p class="subjectTitles">LDR (Light Dependent Resistor)</p>
+
+<div class="left"> 
+
+  <p class="subjectTitles">Circuit</p>
+  
+  <img src= "assets/LDR Circuit .png"  width="300" height="150">
+  
+  </div>
+    
+  <div class="right">
+
+    <p class="subjectTitles">Code</p>
+   
+    <img id="LDR" src="assets/Code.png" alt="circuit 2" width="300" height="225">
+ 
+ 
+    <p>
+     <button onclick="changeImage5()">Simple Code</button>
+     
+     <button onclick="changeimage6()">Complex Code</button>
+ 
+ 
+     <script>
+     function changeImage5() {
+         var image = document.getElementById('LDR');
+         image.src = 'assets/2410code.png'; // Replace 'new-image.png' with the path to the next image you want to display
+     }
+ 
+     function changeimage6() {
+         var image = document.getElementById('LDR');
+         image.src = 'assets/Code.png'; // Replace 'new-image.png' with the path to the next image you want to display
+     }
+     </script>
+ 
+ </div>
+
+
+  <p class="generalText">We then produced a code similar to when we created a code for the potentiometer last week. It was good to redo as I realized I was still not fully confident in mapping the code.   </p>
+
+  <p class="subjectTitles">InfraRed Sensor</p>
+ <P class="generalText">The InfraRed sensor bounces back light. It's good for measuring short, precise, repeated changes if there's an object there or not and it measures a high resolution =, detecting edges and small changes. It is bad when in direct sunlight or fluorescent light, at detecting dark materials or environments and measuring longer distances. </P>
+  
+<p class="subjectTitles">Ultrasonic Sensor</p>
+ <P class="generalText">The ultrasonic sensor emits a signal that is reflected back. It measures accurate, longer distances and works in environments with external factors like varying light and fog. Its struggles with higher resolution changes in the detected shape, very fast changes due to its slower signal speed and it can be expensive for higher spec sensors. </P>
+  
+  <p class="subjectTitles">HC-SR04</p>  
+  
+  <div class="left"> 
+
+    <p class="subjectTitles">Circuit</p>
+    
+    <img src= "assets/HC Circuit.jpg"  width="300" height="150">
+    
+    </div>
+    
+    <div class="right">
+
+      <p class="subjectTitles">Code</p>
+      
+      <img src= "assets/HC Code.png"  width="300" height="150">
+      
+      </div>
+
+<P class="generalText">The HC-SR04 is an ultrasonic sensor. We used the sensor to make a LED to turn up and down in brightness based on distance. It has a Trigger Pin: that sends out a sonic burst which is received back by the sensor when it bounces off an object and an Echo Pin: that then output the time in microseconds the sound wave traveled. The sensor's calculations can be done from scratch in code reading from each digital pin. We installed an external library, ‘New Ping’ to help us code this. I enjoyed using the sensor, although the circuit itself was quite temperamental it will be useful to potentially use this in my project. </P>
+
+<p class="subjectTitles">Creative Comouting Metaphor Design Example</p>
+<p class="generalText">The livegrid is an example of Creative Computing work that uses metaphor, referring to Bill Bill Verplank’s ‘Interaction Design Framework’.Livegrid understands your environment through a vibrant intuitive aquatic display. Rather than having an actual aquatic system or ecosystem it is a digital display that has a sensor reading your environment's temperature, humidity and C02 Levels. This data is used to present an immersive aquatic ecosystem. As the humidity rises the water changes hue and the plants burgeon. When the C02 levels become hazardous, the fish in the aquatic systems visually show suffering. The displays in the ecosystem are full of metaphors.</p>
+
+<p  class="now">
+  <a href=https://j3n-teaching.notion.site/Week-05-Sensors-363e8bec8078467bb41e4a6f2600ab13 >
+   <h2>&#128366
+  </a>   
+  <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ed7e9793-cadb-4636-b721-b08500e1b0da&instance=moodle>
+ &#128253</h2>
+      </a>
+</p>
+<p class="bottom"></P> 
+
+  <p class="dateTitles" id="31/10/2023">WEEK 6: KINETIC </P>
+<p class="byline">
+  <i>31/10/2023</i>
+</p>
+
+<p class="generalText">In the lecture we did an overview of theory surrounding electricity. I have included some basic notes below in case they need to be reviewed at any point. </p>
+<p class="generalText">Circuitry - The difference in charge between two points is voltage.  There needs to be a difference in charge for electricity to flow.</p>
+<p class="generalText">Resistance - Resistance is measured in OHMS. The more resistance the harder it is for the electricity to flow. OHM'S Law equation calculates the Amps, Resistance and Voltage in relation to each other.  </p>
+<p class="generalText">Arduino Electricity - The electricity comes through the pins. On/Off represented by high or low current using its IDE software. The Power comes from a USB or a battery.  </p>
+<P class="generalText">DC Motor - It goes in one direction, the speed of movement can be controlled. The direction can be reversed but it requires extra components - a H-bridge. Using a transistor the motor can be controlled in its behavior and its flow. </P>    
+<p class="generalText">Transistor - A transistor is an electronic device that can work as a switch. As motors are inductive loads, they can create a reverse voltage when spinning down after you turn them off; it is good practice to add a protection diode into the circuit.</p>
+<p class="generalText">Mosfet Transistor - This is a type of field effect transistor, It can cope with higher voltage loads. It can switch faster than the transistor shown above (Bipolar Transistor).</p>
+
+<p class="subjectTitles">DC Motor Circuit</p>
+
+<div class="left"> 
+
+  <p class="subjectTitles">Circuit</p>
+  
+  <img src= "assets/Circuit A.png"  width="300" height="150">
+  
+  </div>
+
+  <div class="right"> 
+
+    <p class="subjectTitles">Code</p>
+    
+    <img src= "assets/Code A30 .png"  width="300" height="150">
+    
+    </div>
+    <p class="generalText">We created a circuit that stopped and started the circuit in a loop with a second in between. This used a complex circuit board but the coding aspect was quite easy. </p>
+
+    <p class="subjectTitles">Servo Motor Circuit</p>
+
+  <div class="left"> 
+
+    <p class="subjectTitles">Circuit</p>
+    
+    <img src= "assets/Circuit 230 .png"  width="300" height="150">
+    
+    </div>
+
+    <div class="right">
+      <p class="subjectTitles">Code</p>
+      <img id="servo" src="assets/Code 331.png" alt="circuit 2" width="300" height="225">
+      <p>
+        <button onclick="changeImage7()">Simple Text Code</button>
+        <button onclick="changeImage8()">Complex Text Code</button>
+      </p>
+      <script>
+        function changeImage7() {
+          var image = document.getElementById('servo');
+          image.src = 'assets/Code 330.png'; // Corrected image source
+        }
+    
+        function changeImage8() {
+          var image = document.getElementById('servo');
+          image.src = 'assets/Code 331.png';
+        }
+      </script>
+    </div>
+    
+    <p class="generalText">We created a circuit then using a servo motor circuit. The wiring of the circuit was very simple and I enjoyed the coding aspect even though it was more complicated. We were using if statements in order to loop the circuit. </p>
+
+<p class="now">
+  <a href=https://j3n-teaching.notion.site/Week-06-Kinetic-2d9c9d07d09145cb81614dc0dcbd7730 >
+  <h2>&#128366
+  </a>  
+  <a href= >
+  &#128253 </h2>
+</a>
+</p>
+<p class="bottom"></P> 
+  
+  <p class="dateTitles" id="07/11/2023">WEEK 7: FABRICATION</P>
+  <p class="byline">
+    <i>07/11/2023</i>
+  </p>
+
+<div class="left">
+  <img id="Code" src="assets/cow.jpg" alt="circuit 2" width="300" height="225">
+</div>
+
+<div class="rightText">
+<p  class="generalText">In groups of six we produced prototypes of designs out of cardboard. They had to hold a circuit insight that used a function we had already done in class. We decided to make a cardboard cow which had LED’s for eyes and buttons for udders. When the bottom left udder was pushed the LED eyes lit up. The code made it so they stayed on until they were pressed again. This was a fun activity and was challenging to fit the wire inside the cardboard cow we had produced. </p>
+</div>
+
+<p class="generalText">Links to resources:
+<p class="generalText"><a href="https://www.makercase.com/#/">https://www.makercase.com/#/</a></p>
+<p class="generalText"><a href="https://wiki.cci.arts.ac.uk/books/facilities">https://wiki.cci.arts.ac.uk/books/facilities</a></p>
+
+<p class="now">
+  <a href=https://j3n-teaching.notion.site/Week-06-Kinetic-2d9c9d07d09145cb81614dc0dcbd7730 >
+  <h2>&#128366
+  </a>  
+  <a href= >
+  &#128253 </h2>
+</a>
+</p>
+<p class="bottom"></P> 
+
+  <p class="dateTitles" id="14/11/2023">WEEK 8: PROTOTYPING</P>
+    <p class="byline">
+      <i>14/11/2023</i>
+    </p>
+
+    <id class="left">
+    <p class="generalText">
+      I connected my arduino to a circuit that controlled a circuit through a potentiometer and a button function. The potentiometer worked well but the button function had trouble with it flickering. I tried to make the button have a smiley face when the button was pressed and a sad face when not. I couldn't figure out the flickering problem but I need to get this to work for my assessment.
+      </p></id>
+
+      <div class="right">
+        <img id="Code" src="assets/Buttonp5.png" alt="circuit 2" width="300" height="225">
+      </div>
+
+<p class="now">
+    <a href= https://j3n-teaching.notion.site/Week-08-Prototype-01-16e1fb3f14f44aa1a3d50ff99fd3d7b5>
+    <h2>&#128366
+    </a>  
+    <a href= >
+    &#128253 </h2>
+  </a> </p>
+ 
+
+  <p class="dateTitles" id="21/11/2023">WEEK 9: SPECULATIVE AND METAPHOR</P>
+    <p class="byline">
+      <i>21/11/2023</i>
+    </p>
+
+    <p class="subjectTitles">Re-Imagined Object Activity:</p>
+<p class ="generalText">We began the lesson in groups reimagining objects. We did this by looking at Bill Verplanks theory and used this to reimagine a chair. Thinking about the function of the chair, we thought of its purpose within a space and how through it being so high up it then makes it so you have to buy access to other furniture in order to make it. We then decided to reimagine it in an installation setting in order to make people think about the purpose of buying furniture and different ways of using chairs within a space. This could mean the chairs have pressure sensory on them so when sat on they create red flashing lights and noise which would force the participants to sit in the space in an alternative way. </p>
+
+    <div class="leftText">
+    <p class="subjectTitles">Neopixels</p>
+    <p class="generalText">Neo pixels are an array of multiple lights that can be controlled by one arduino pin. Each light can be controlled individually and are much brighter than the LEDS we use. The adafruit neopixel library is good for programming lights. I have attached both a circuit model and a code of wiring neopixels. </p>
+  </div>
+
+  <div class="right">
+    <p class="subjectTitles">Example</p>
+    <img id="Neo" src="assets/NeopixelCode.png" alt="circuit 2" width="300" height="225">
+    <p>
+      <button onclick="changeImage7()">Traffic</button>
+      <button onclick="changeImage8()">Circuit</button>
+      <button onclick="changeImage9()">Code</button>
+    </p>
+    <script>
+      function changeImage7() {
+        var image = document.getElementById('Neo');
+        image.src = 'assets/trafficlit.png'; // Corrected image source
+      }
+  
+      function changeImage8() {
+        var image = document.getElementById('Neo');
+        image.src = 'assets/circuitneopixel.png';
+      }
+      
+      function changeImage9() {
+        var image = document.getElementById('Neo');
+        image.src = 'assets/NeopixelCode.png';
+            }
+    </script>
+  </div>
+
+  <p class="generalText">I then did some soldiering which I really enjoyed and I did this for both a three point pin for any sensors and a button. I need to think about how ill soldier my circuit for my invented object. </p>
+
+  <p class="generalTitle">Re-Imagined Object </p>
+
+  <p class="generalText">For my reimagined object I want to use a metronome that somehow changes its function of beat in order to compose new music. Originally I wanted to do this through audio input but I could do it through an alternative sensor. 
+    I could do some sort of light or movement sensor. It could be based on her movement that the metronome ticks at different rates. This could be placed below her to show the movement of her breathing. 
+    </p>
+
+  <p class="now">
+    <a href= https://j3n-teaching.notion.site/Week-09-Speculative-05e158f25c9c486fa77483c974f06b2d>
+    <h2>&#128366
+    </a>  
+    <a href= >
+    &#128253 </h2>
+  </a> </p>
+  <p class="bottom"></p>
+  
+  <p class="dateTitles" id="28/11/2023">WEEK 10: ACCESSIBILITY AND PROTOTYPING 2 </P>
+    <p class="byline"> 
+      <i>28/11/2023</i>
+    </p>
+
+    <p class="subjectTitles">Accessibility Design</p>
+    <p class="generalText">
+      We had a lecture based on accessibility design and looked at being user design sensitive. This included looking at being Human Design Centered who design for people of their contexts. They understand humans as a more complex system. It's a step beyond user centered design. As well as Universal design who look to be more inclusive of all people. It aims to make design accessible to the greatest number of users as possible. We then looked at pluralism, a feminist standpoint theory. To resist a single or totaling universal point of view. It is impossible to realistically totalis humanity. It made me think about how I need to be more user sensitive in my designs that I make, especially when creating digital interfaces. 
+      </p>
+
+    <p class="subjectTitles">State Control, Switch Cases and Functions </p>
+
+   <div class="leftText">
+    <p class="subjectTitles">Switch Cases</p>
+    <p class="generalText">We then coded a lightbulb based on a switch case function. It had four different cases which had set statements of the lightbulbs brightness with a default of it being off. We began this by writing a code which just had the case statements of the lightbulb state. </p></div>
+    <div class="right">
+      <img id="Code" src="assets/SwitchCaseA.png" alt="circuit 2" width="350" height="225"></div>
+
+      <div class="leftText">
+        <p class="subjectTitles">Button Code</p>
+        <p class="generalText">We then produced a code that programmed the button input on its own. So at this point I have two codes. One controlling input and one output. The button programmed the code to produce a serial print that told us it was “on” when pressed and “off” when not. </p></div>
+        <div class="right"> <img id="Code" src="assets/Buttoncode.png" alt="circuit 2" width="350" height="225"></div>
+          
+          <div class="leftText">
+            <p class="subjectTitles">Full Code</p>
+            <p class="generalText">We then put both of the codes together to produce a circuit that when the button is pressed it has different states of brightness (pressed four times). However I didn't manage to find a way that then loops this function so when the serial print reaches 4 it just reaches a default of 0. </p>
+          </div>
+        
+          <div class="right">
+            <img id="Code" src="assets/FullcodeA.png" alt="circuit 2" width="350" height="225">
+            <p>
+              <button onclick="changeImage7()">Down</button>
+              <button onclick="changeImage8()">Up</button>
+            </p>
+            <script>
+              function changeImage7() {
+                var image = document.getElementById('Code');
+                image.src = 'assets/FullcodeA.png'; // Corrected image source
+              }
+          
+              function changeImage8() {
+                var image = document.getElementById('Circuit');
+                image.src = 'assets/FullcodeB.png';
+              }
+            </script>
+          </div>
+
+  <p class="now">
+     <a href= >
+     <h2>&#128366
+     </a>  
+     <a href= >
+     &#128253 </h2>
+     </a> </p>
+  
+
+  <p class="bottom">
+  <a class="subjectTitles" href="index.html">Home</a>
+  </p>
+</main> 
+  <nav>
+  </nav>
+
+ 
+</body>
+
+</html>

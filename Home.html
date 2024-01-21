@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- title of the page that appears at the top of the window/tab
+         should be changed per page
+    -->
+  <title>Home</title>
+  <!-- include our CSS files -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.8.0/p5.js"></script>
+ 
+    <link rel="stylesheet" type="text/css" href="global.css">
+    <meta charset="utf-8" />
+  <link rel="stylesheet" href="global.css"></link>
+<!-- <style>
+  html {
+    background-color: rgb(255, 255, 255);
+    background-size: cover;
+  }
+</style> -->
+</head>
+
+<body>
+<main>
+ <p class="dateTitles">Welcome to My Process Journal</p>
+  <sidebar>
+    <button class="folder">
+    <a href="Creative Coding.html">
+      <div class="thumbnail-container">
+     <img  alt="Creative Coding" src="assets/folder.png" width="70" height="70">
+    <p class="thumbnailstitle">CREATIVE CODING</p> </img>
+  </div>
+  </a>
+  </button> 
+ 
+  <button class="folder">
+    <a href="Physical Computing.html">
+      <div class="thumbnail-container">
+     <img  alt="Physical Computing" src="assets/folder.png" width="70" height="70">
+    <p class="thumbnailstitle">PHYSICAL COMPUTING</p> </img>
+  </div>
+  </a>
+  </button>
+
+  <button class="folder">
+    <a href="Computational.html">
+      <div class="thumbnail-container">
+     <img  alt="Computational Futures" src="assets/folder.png" width="70" height="70">
+    <p class="thumbnailstitle">COMPUTATIONAL FUTURES</p> </img>
+  </div>
+  </a>
+  </button> 
+</sidebar>
+
+<div id="SketchContainer"></div>
+</main>
+<script src="SketchContainer.js"></script>
+<script src="Computer/computermodel.js"></script>
+
+</body>
+
+</html>

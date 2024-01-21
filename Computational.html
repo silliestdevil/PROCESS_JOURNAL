@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Computational Futures</title>
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/addons/p5.sound.min.js"></script>
+  <link rel="stylesheet" href="global.css" />
+
+  <script>
+    /* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
+  function openNav() {
+    document.getElementById("mySidebar").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+  }
+  
+  /* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
+  function closeNav() {
+    document.getElementById("mySidebar").style.width = "0";
+    document.getElementById("main").style.marginLeft = "0";
+  }
+      
+    </script>
+    <script>
+      let letters = []; // Create an array to store letters
+      let delayFrames = 120; // 60 frames per second * 2 seconds
+      let addedW = false; // Flag to track if "W" has been added
+      let delayBetweenLetters = 30; // 60 frames per second * 1 second
+      let nextLetterTime = 0; // Track when to add the next letter
+      let lettersToAdd = ["O","M","P","U","T","A","T","I","O","N","A","L"," ","F","U","T","U","R","E","S"]; // Letters to add
+  
+      function setup() {
+        let canvas = createCanvas(650, 100);
+        canvas.parent('sketch-contin');
+        frameRate(60)
+        textSize(20); // Set the text size to 20
+        textFont('Courier new');
+      }
+  
+      function draw(){
+        background(300);
+  
+        if (frameCount < delayFrames && !addedW) {
+          letters.push("C"); // Add "W" only once
+          addedW = true; // Set the flag to indicate that "W" has been added
+          nextLetterTime = frameCount + delayBetweenLetters;
+        }
+  
+        if (frameCount >= nextLetterTime && lettersToAdd.length > 0) {
+          letters.push(lettersToAdd.shift()); // Add the next letter from the array
+          nextLetterTime = frameCount + delayBetweenLetters;
+        }
+  
+        const spacing = 20;
+        // Display the letters from the array
+        for (let i = 0; i < letters.length; i++) {
+          text(letters[i], 40 + i * spacing, 60);
+        }
+      }
+      </script>
+  
+
+</head>
+
+<body>
+    <header>
+
+      <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="Home.html">Home</a>
+        <a href="#28/09/2023">Week 1: Introduction</a>
+        <a href="#05/10/2023">Week 2: Computation is a Feeling</a>
+        <a href="#12/10/2023">Week 3: Perception I</I></a>
+        <a href="#19/10/2023">Week 4: Perception II</a>
+        <a href="#26/10/2023">Week 5: Behaviors I: Emergence</a>
+        <a href="#02/11/2023">Week 6: Experiments in Synthetic Psychology</a>
+        <a href="#09/11/2023">Week 7: Communications</a>
+        <a href="#16/11/2023">Week 8: UVA @180Studios</a>
+        <a href="#23/11/2023">Week 9: Creatures 1</a>
+        <a href="#30/11/2023">Week 10: Creatures 2</a>
+  
+      </div>
+  
+    <div class="topLine"></div>
+      <div id="main">
+        <button class="openbtn" onclick="openNav()">&#9776; Content</button>
+      </div>
+       
+        <div id="sketch-contin"></div> 
+        <p class="byline">
+          <i>Computational Futures</i>
+        </p>
+  
+      </header>
+      <main>
+        <P class="dateTitles" id="28/09/2023">WEEK 1: INTRODUCTION</P>
+        <p class="byline">
+          <i>28/09/2023</i>
+        </p>
+
+        <p class="generalText">For our introductory session to Computational Futures we looked at how inflatables fit and adapt to their environment. This meant that we made an inflatable using tape and plastic sheets and bin liners, creating a shape that created a different perception of the space surrounding this. We created an inflatable that was a circular shape like a rubber ring. Through placing yourself within the center of the ring you experienced the environment in a different way i.e. through sight and limitations to movement. Building the inflatable was difficult and had a few rips, the logistics of building it we found challenging. </p>
+
+        <p class="now">
+          <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+           <h2>&#128366
+          </a>   
+          <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=29bd4a77-164f-48d9-ad87-b08500e320b0&instance=moodle>
+         &#128253</h2>
+              </a>
+        </p>
+        <p class="bottom"></P> 
+
+          <P class="dateTitles" id="05/10/2023">WEEK 2: COMPUTATION IS A FEELING</P> 
+          <p class="byline">
+            <i>05/10/2023</i>
+          </p>
+       
+    <div class="leftText">
+    <p class="generalText">We created a set of instructions that functioned as a Computational process. Using only our set instructions we had to navigate a grid that was filled with objects we had to maneuver in order to find the sweet. This was a complicated task and was filled
+      with a complex puzzle that required understanding the computational process: input - Process - Output.</p>
+    <p class="generalText">Interesting References:</p>
+    <p class="generalText">Rodney Brooks</p>
+    <p class="generalText">MIT Leg Lab</p></div>
+    <img src="assets/Rules .jpg"  width="215" height="250">
+   
+    
+    <p class="now">
+      <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+       <h2>&#128366
+      </a>   
+      <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=29bd4a77-164f-48d9-ad87-b08500e320b0&instance=moodle>
+     &#128253</h2>
+          </a>
+    </p>
+    <p class="bottom"></P> 
+
+    <p class="dateTitles" id="12/10/2023">WEEK 3: PERCEPTION I</p>
+    <p class="byline"><i>12/10/2023</i></p>
+    
+     
+  
+    <p class="generalText"> not here</p>
+    
+    <p class="now">
+      <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+       <h2>&#128366
+      </a>   
+      <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b5975a69-b826-4bcb-b0c8-b08500e320d2>
+     &#128253</h2>
+          </a>
+    </p>
+
+    <p class="bottom"></P> 
+
+      <p class="dateTitles" id="19/10/2023">WEEK 4: PERCEPTION II</p>
+      <p class="byline"><i>19/10/2023</i></p>
+      
+    <p class="subjectTitles">Dreams Lecture by Adam Haar Horowitz</p>  
+
+    <p class="generalText">We had a lecture on Dreams by a guest lecturer, Adam Haar Horowitz.  It began through us talking as a group about what dreams are. A space to explore worlds that are completely composed from our own imagination. </p> 
+     
+    <p class="generalText">We looked at local sleep and learning.  "Black Power Naps," Afro-Latinx artists Fannie Sosa and niv Acosta create a series of "devices" that invite Black people to rest and heal. Research on the racial sleep gap provided evidence that certain communities due to increased noise pollution such as stricter 
+      police surveillance etc meant that black communities have about one hour less sleep a day.</p>
+
+    <p class="generalText"> The imaginative worlds we create in our unconscious states are not only when we are fast asleep in our dreams but also while we daydream. Between a third and a half of our waking hours are spent dreaming. Dreams predict potential happenings of our future meaning that if we have dreamt certain situations we are able 
+      to cope better if those situations happen in reality. </p>
+
+    <p class="generalText">Adam Haar created a system that can be practiced at home that allows a way for us to access what we have dreamt. Following the instructions that once someone has passed through REM sleep, if you whisper an object/subject for the patient to dream about and wake them 5 mins later and ask what they are thinking about, they will tell you their 
+      thoughts/dream regarding the subject you whisper. This can be a useful tool to be used within therapy and allows us to gain a deeper understanding of our hidden perspectives about a certain subject. </p>
+      
+   <P class="generalText">Adams research however has been abused. Coors Light took this method as a marketing scheme. Marketing through a Super Bowl advert, whoever used this technique would receive a free 12 pack of Coors. They 
+    found their sales rose by over 30% making it their most successful marketing scheme yet. However due to it involving unconscious marketing Coors has received a steep legal battle. </P>
+      
+    <p class="generalText">I really enjoyed Haars lecture on dreams. It not only gave me an understanding of how I produce my own artwork but also enabled me to have a greater understanding of a large portion of my brain's existence that I didn’t know much about.</p> <p>
+    
+    <p class="subjectTitles">Readings and Links</p>
+
+    <p class="generalText"> Don Patersons, The art of dark </p>
+    <p class="generalText"><a href= https://news.mit.edu/2020/targeted-dream-incubation-dormio-mit-media-lab-0721>Dream Incubation</a></p>
+    <p class="generalText"><a href=https://www.media.mit.edu/projects/sleep-creativity/overview>Sleep Creativity </a>
+    
+    <p class="now">
+      <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+       <h2>&#128366
+      </a>   
+      <a href="https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=c5061d57-58ca-4032-808b-b08500e320f9">
+     &#128253</h2>
+          </a>
+    </p>
+
+    <p class="bottom"></P> 
+
+      <p class="dateTitles" id="26/10/2023">WEEK 5: BEHAVIOURS I: EMERGENCE</p>
+      <p class="byline"><i>26/10/2023</i></p>
+
+    <P class="subjectTitles">Embodied Cognition</p>
+    <div class="leftText"> <pre>&nbsp;</pre><p class="generalText">It arises from interactions of the body with the world, and is dependent on the situatedness of an agent within its environment. The biologist's brain is not a thinking machine, it is an acting machine; it gets information and it does something about it. Cognition is ongoing active maintenance of a robust animal-environment system, achieved by closely coordinated perception and action. </p>
+    </div>
+    <img class="rightimage" src="assets/Sensotimotor loop.jpg"  width="300" height="250"><pre>&nbsp;</pre>
+
+  <p class="generalText">Morphological Computation: Refers to the computation which is conducted by the body, that otherwise would have to be performed by the brain. </p>
+<P class="generalText">Feedback Loops: A crucial aspect of how we interact with the world. An error corrective system; using feedback to reduce error. </P>
+<p class="generalText">Sensorimotor loop: Are crucial feedback loops</p>
+<p class="generalText">Braitenberg vehicles: Hypothetical models of simple autonomous motors. Single input and motor, if it's warm temp it speeds up, if its a cold temp it slows down </p>
+<p class="generalText">Perception action cycle: Two functional parts; perceptor and actuator. Perceives its environment by incoming stimuli. Control the preceptor via feedback from the environment</p>
+  
+<p class="subjectTitles">Creature</p>
+<p class="generalText">Our assessment is to make a ‘creature’; part of a creature or stimulating a creature. Thinking about inputs, outputs and adaptive behavior. The assessment will be a 2000-3000 word essay on our creation, having an understanding of its cognitive systems and how I participated in the making of it. Examples include: ‘The Frogs nose’ - Tega Brain, ‘Random International’ - Fly</p>
+
+<p class="subjectTitles">Emergence</p>
+
+<p class="generalText">A relationship observed between local behaviors and global patterns and the appearance of patterns, structures or properties that cannot adequately be explained by referring only to the systems per existing components and their interactions, an example in social behaviors being ‘Universal everything’ - Tribes (2018). </p>
+<p class="generalText">Emergent systems are often best understood from the bottom up. Simulation can allow us to prototype the simple rules that underlie complex systems. There are many different simulation techniques for understanding different systems. It gives us a way to investigate and create hypotheses about mechanisms that exist in the world. Often it involves a degree of abstraction. Simulation gives us a way to understand the world by trying to emulate it. These bottom-up cellular automata + agent based models are powerful techniques for engaging this.</p>
+<p class="generalText">I found the concept of this quite confusing but since reading back on my notes and with further research I have begun to understand the general concepts of the models and the theory surrounding. </p>
+<pre>&nbsp;</pre>
+<div class="leftText"><p class="subjectTitles">Cellular Automata</p>
+  <img  src="assets/cellularautomaton.png"  width="300" height="250">
+ <p class="generalText">Cellular Automata is a model of computation, it stimulates natural phonomena.<p>
+ <pre>&nbsp;</pre></div>
+  <div class="rightText"><p class="subjectTitles">Elementary Cellular Automata</p><img class="imagecenter" src="assets/Elementarycellular.png"  width="150" height="150">
+    <pre>&nbsp;</pre><p class="generalText">It's a one dimensional cellular automata. There are two possible states and the rule to determine the state of a cell in the next generation depends only on the current state of the cell and its two immediate neighbors. Each line creates a new generation and there are 256 possible rules.</p>
+<pre>&nbsp;</pre></div>
+<div class="leftText"><p class="subjectTitles">Turing Patterns</p><pre>&nbsp;</pre><img src="assets/Turing.png"  width="300" height="250"><pre>&nbsp;</pre>
+  <pre>&nbsp;</pre><P class="generalText">A concept based on ‘The chemical basis of morphogenesis in 1952. It describes how patterns in nature devise from a uniform state. It’s a reaction - diffusion system that has been the basis for a huge number of natural patterning and differentiation systems. </p></div>
+
+<div class="rightText"><p class="subjectTitles">Morphogenesis</p><img src="assets/Morphogenesis .png"  width="300" height="250"><pre>&nbsp;</pre>
+  <pre>&nbsp;</pre><P class="generalText">It's the ‘the generation of form’. The Models based on Turing's paper. It's used to explore and understand phenomena like cell differentiation + limb formation from the bottom up. A biological process that causes a cell, tissue or organism to develop its shape. </p></div>
+
+
+<p class="subjectTitles">Example of Self Organizing Systems </p>
+<p class="generalText">ANTS: They give a mixture of chemical signals and direct communication. They also use Stigmergy;  a form of communication where the enviro becomes part of the messaging medium. Leaving chemicals site specifically </p>
+<p class="generalText">TERMITES: They have complex mound construction achieved by individual agents and create their own ventilation systems that supports their survival </p>
+<p class="generalText">SWARM INTELLIGENCE: A superorganism; both and individual and collective basis which in itself is a self organizing entity </p>
+<p class="generalText">AGENT BASED MODELING: Each agent gets simple rules, emergents complexity of group behavior / agent environment interaction </p>
+<p class="generalText">AMORPHOUS COMPUTING: Massively parallel computing systems made out of very inexpensive parts with Intensive morphologically intelligent</p>
+<p class="generalText">L SYSTEMS: Lindenmayer systems. A Mathematical model used to produce life like trees in nature that Mimics algorithms in nature</p>
+<P class="generalText">VIDEO GAMES: Procedural generation used extensively to create large worlds from smaller rulesets</P>
+
+<p class="subjectTitles">Reading</p>
+<P class="generalText">Amorphous Computing (1996) - Harold Abelson, Thomas F. Knight, Gerald Jay Sussman, and friends</P>
+<p class="generalText">Parallel Minds (2002) - Laura Tripaldi</p>
+<p class="generalText">Protocol: how control exists after decentralization - Alexander Galoway </p>
+<p class="generalText">Physical computing, a mechanistic account - Gualtiero Piccinini.</P>
+
+  <p class="now">
+    <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+     <h2>&#128366
+    </a>   
+    <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=ce3fcf7f-2d94-491f-85d9-b08500e3211f>
+   &#128253</h2>
+        </a>
+  </p>
+
+  <p class="bottom"></P> 
+
+    <p class="dateTitles" id="02/11/2023">WEEK 6: BEHAVIOURS I: EMERGENCE</p>
+    <p class="byline"><i>02/11/2023</i></p>
+
+  <P class="subjectTitles">Behaviour and Robots</P>
+<p class="generalText">The robots are situated in the world, only controlled by the here and now. They are influenced by the present only. The source of the robot's intelligence is also from its environment, not just its computational engine</p>
+<p class="generalText">Valentino Braitenberg popularized the modeling approach to synthetic psychology. Models are not constructed after analyzing data, the behaving model is the source of the data. Braitenberg vehicles are hypothetical models of simple autonomous robots that demonstrate behavior based on direct sensorimotor connections i.e. the model creates its data from its environment. </p>
+
+<P class="subjectTitles">Aggression in Emergent Behaviors</p>
+<p class="generalText">Aggression in one agent can cause global patterns within a group. Through a series of behaviors such as group dynamics altering, collective decision making, adaptive strategies and social norms - once one member of the group forms aggressive behavior the rest of the group is likely to follow the behavioral pattern. This is represented in most human social groups, if one person within the dynamic stops following the regular pattern within the group it creates a new dynamic where most other members create an alliance and a hierarchy begins. There are many types of inputs that could be reflected in their traces. For example, lots of species will begin to hibernate in the winter months, within the human race this isn't as much of the case but a member of the group may begin to go out less than the others due to the cold meaning a pattern is disrupted and their is a shift in the group dynamics stability and chaos pattern structure. This could create a new decision making where that member of the group drops in the hierarchy; especially if going out is a social norm to the group. </p>
+
+<div class="leftText">
+<P class="subjectTitles">Braitenberg Vehicles </p>
+<p P class="subjectTitles">Using Braitenberg vehicles in groups we then made a ‘creature’. Following a set of instructions that were given to us and a code to copy we all had the same task. The circuit was hard to follow and quite complex. It used a sensor to navigate direction and a nano arduino which the code was uploaded to. I really enjoyed producing the ‘creature’. </p></div>
+<img src= "assets/robot.jpg"  width="300" height="300">
+
+<p class="subjectTitles">Examples and Readings References:</p>
+<p class="generalText">Norbert Wiener - “Moth Mode”</p>
+<p class="generalText">Casey Reas - “Path”</p>
+<p class="generalText">Physical Analogues to the Growth of a concept, Gordon Pask 1958 </p>
+<p class="generalText">Vehicles, Valentino Braitenberg 1984 </p>
+
+<p class="now">
+  <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+   <h2>&#128366
+  </a>   
+  <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=7f3e7427-303d-4947-8172-b08500e3216c>
+ &#128253</h2>
+      </a>
+</p>
+
+<p class="bottom"></P> 
+
+  <p class="dateTitles" id="09/11/2023">WEEK 7: EXPERIMENTS IN SYNTHETIC PSYCHOLOGY</p>
+  <p class="byline"><i>09/11/2023</i></p>
+
+<p class="subjectTitles">Kinetic Memory Triggers </p>
+
+<p class="generalText">Communication - transmission of information between individuals and groups. Signal is communications primary gesture for example sound or any type of transmission. Central to the notion of communication is the reception of information through a stimulus that an organism perceives from the external environment.</p>
+<p class="generalText">Sender-receiver model is a simplified representation of the process of communication between a sender (source) and a receiver (destination).</p>
+
+<p class="subjectTitles">Animal communication</p>
+
+<p class="generalText">Differing views that produce different accounts of animal behavior + reflect different accounts of human social behavior. An understanding of communication that is based co>operative behavior between groups and Individual, 'selfish', communicative behaviorssignals in animals reflect an 'evolved purpose' - they aren't just incidental behaviors that convey information ('cues') but a process necessary to the continued survival of the species The design of animal communication channels are shaped by selection pressures within their environment, as well as the sensory and neural capacities of receivers. </p>
+<p class="generalText">Communication involves the transmission of information between a sender and receiver. Animal communication theory is split into two approaches - informational and influential. Communication is a social phenomenon. Under the influential mode communication is a process in which signallers manipulate receivers, rather than informing them. Can we call these communication behaviors cognitive? If not, what would be needed beyond this to do so?</p>
+
+<p class="subjectTitles">Informational Entropy </p>
+<p class="generalText">Entropy is a mathematical theory that is the average amount of information conveyed by an event, when considering all possible outcomes. </p>
+<p class="generalText"> Communication systems aren't always optimal, many animals don't keep trying to push their information systems, they keep the one that efficiently fits within their environment, if it works for them. As human beings we don’t strive for this in both our language through its inaccessibility but also through our communication through technology etc. It fulfilled its purpose but yet we don't stop. The goal isn’t what's functional but how individuals can benefit in economical ways through social hierarchy. Humans use aggression as a behavioral system.  </p>
+<p class="generalText">Channel Capacity is defined by the amount of information that can be sent down the channel that can be reliably interpreted on the other end. We can change the capacity of the channel using encoding and decoding. </p>
+
+<p class="subjectTitles">Infrared Signals</p>
+<p class="generalText"> We then coded a way for an infrared light to send and receive information through signals. This is shown. The information is then transmitted through serial print. It was using infrared transmission to translate code. The code was given through the library IRremote labelled as the code simpleSender and simpleReciever This was difficult to do based on the volume in the room.  </p>
+
+<p class="now">
+  <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+   <h2>&#128366
+  </a>   
+  <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=dba80112-9d99-4bc8-8433-b08500e321a9>
+ &#128253</h2>
+      </a>
+</p>
+
+<p class="bottom"></P> 
+
+  <p class="dateTitles" id="16/11/2023">WEEK 8: UVA @180 STUDIOS</p>
+  <p class="byline"><i>16/11/2023</i></p>
+
+  <p class="subjectTitles">180 The Strand</p>
+  <p class="generalText">The exhibition was interesting to see. Mostly interesting to see how much people are willing to pay to see exhibitions that are immersive. I didn’t think the concepts were that conceptual or even the technical ability was that technical but I did think they were successfully executed. </p>
+<p class="subjectTitles">03 Polyphony</p>
+  <p class="generalText">My most preferred piece is Polyphony. A piece that used immersive sound and lights to produce an environment similar to that of the Dzanga-Sangha special reserve in the Central African Republic. It was a calming environment to be in which contrasted from the overly stimulating environment of the rest of the exhibition. It did however make me question if this is how the world is heading in regards to experiencing nature. As more green land is built on and destroyed and affected by the climate crisis, will we begin to experience ‘nature’ within a digital immersive space? deferring from the benefits being in ‘cleaner’ natural environments give us. </p>
+  <p class="subjectTitles">01 Present Shock </p>
+<p class="generalText">Other notable works include Present Shock 11 which presented data from current news headlines on statistical clocks. However we did get told that with the current headlines being focused on Palestine and Israel the data used wasn’t current but before Palestine hit headlines. This creates a sensor ship over the data and provides interesting ethical questions on the work and the databases used by the artist.</p>
+<p class="subjectTitles">07 Chromatic </p>
+  <p class="generalText">Another being Chromatic through its use of exploring the harmony of classical music composed by Daniel J Thibaut through color and shapes. Although I found the piece being a bit simple I thought it could work successfully to help children learn how to read music and learn about music and harmony especially with the population's attention span being so low. </p>
+<p class="now">
+    <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+     <h2>&#128366
+    </a>   
+    <a href=https://www.180studios.com/uva>
+   &#128253</h2>
+        </a>
+  </p>
+   
+<p class="bottom"></P> 
+
+  <p class="dateTitles" id="23/11/2023">WEEK 9: Creatures 1</p>
+  <p class="byline"><i>23/11/2023</i></p>
+ 
+  <p class="subjectTitles">Activity: Worlding</p>
+
+  <p class="generalText">In groups we did some worlding where we did three activities. The first creating a world, then creating a creature and then working on communication through a collective of creatures.</p>
+  <p class="generalText">One of the worlds we produced was within the body of a whale. The creatures we then produced were parasites invented by another species in a different world in order to dissolve the plastics within the whale. They did this through holding hands with other of the same parasite in a circle for it to dissolve. The parasite when there's no plastic left it begins to eat the bones of the whale which make it decompose. The parasites communicated through hormonal chemicals and traveled in a chain through the bloodstream. This activity made me feel more positive about making my creature for the assignment and hopeful for what we will produce. </p>
+
+  
+  <img src="assets/World.jpg"  width="300" height="250" class="center">
+
+
+  <a href=https://moodle.arts.ac.uk/course/view.php?id=80196>
+    <h2>&#128366
+   </a>   
+   <a href=https://ual.cloud.panopto.eu/Panopto/Pages/Viewer.aspx?id=b32ccb36-3ec5-4d57-8e90-b08500e321d8&instance=moodle>
+  &#128253</h2>
+       </a>
+ </p>
+ 
+ <p class="bottom"></P> 
+
+  <p class="dateTitles" id="30/11/2023">WEEK 10: Creatures 2</p>
+  <p class="byline"><i>30/11/2023</i></p>
+
+  <P class="subjectTitles">Creature Assessment</P>
+
+  <p class="generalText">Today we got into groups and began thinking about what we want to produce to make a creature. Our group has decided to focus on group behaviours of species (mainly insects) who have a strong sense of hierachy in a self governing community.</p>
+  <p class="generalText">We began by looking at termites and their society's structure and the aspects of thier social we would want to reproduce within our own design of a creaute. I have attached the figram of the work we produced today below.</p>
+
+  <a class="generalText" href="https://www.figma.com/file/UT33Vof37MGD3El0esoJx7/CCI-THURSDAY-GROUP?type=whiteboard&node-id=1-339&t=MyNVJTUjuRdQewTU-0">Figma Board</a>
+  
+  <a href=https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/d0/5e/d05e447a8e20d606f253999da79fc0b71a024de7?response-content-disposition=inline%3B%20filename%3D%22231130_worlding_creatures_2.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231130%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231130T101254Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21546&X-Amz-Signature=98c5b3d0fe0d57d267ab07c8f46fd015d9daf7959253750cdd2e29ad22f460e5>
+    <h2>&#128366 
+   </a>   
+   <a href=>
+  &#128253</h2>
+       </a>
+ </p>
+ 
+ <p class="bottom"></P> 
+
+    <p class="dateTitles" id="Reading">BIBLIOGRAPHY</p> 
+
+    <p class="generalText">WEEK 1</p>
+   <p><a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/52/06/5206795e4c5840aac0994bf201f346474b18ffe6?response-content-disposition=inline%3B%20filename%3D%22Inflatocookbook%2C%20Ant%20Farm.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T175501Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21599&X-Amz-Signature=8b7342ad6c7417e8f8d63000c957459760baf568c195a69b61acb6b414c8ff1f">Inflatables Cookbook</a></p>
+    <p> <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/4b/a0/4ba091a20af6b1c237e7890e1f4c16508221e8e6?response-content-disposition=inline%3B%20filename%3D%22230928_inflatables_reader.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T175632Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21568&X-Amz-Signature=c733f4fcdd90734c66f5ff2b334a6fe71965b022a2ad268b412063f0e6d59b36">Inflatables Reader</a> </p>
+     <p class="generalText">WEEK 2
+      <p> <a class="generalTextb" href=" nyrc/NYRC 1 - The Computer is a Feeling.md at main · timhwang/nyrc (github.com)">Computer is a Feeling</a>  </p>
+        <p>  <a class="generalTextb" href="https://aeon.co/essays/your-brain-does-not-process-information-and-it-is-not-a-computer">Epstein - The Empty Brain</a>  </p>
+          <p> <a class="generalTextb" href="https://people.csail.mit.edu/brooks/papers/representation.pdf">Brooks - Intelligence Without Representation. Artificial intelligence </a></p>
+    <p class="generalText">WEEK 3</p>
+    <p>   <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/3f/69/3f69b02df2eb83e321502b169725011fb707c0d1?response-content-disposition=inline%3B%20filename%3D%22WhattheFrogsEyeTellstheFrogs%20Brain.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T180119Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21581&X-Amz-Signature=85df788f0ffae724f8bb4404a0760797ec43ebb833b3545215aabbd05e66e83f">What the Frog's Eye Tells the Frog's Brain</a></p>
+      <p>   <a class="generalTextb" href="https://direct.mit.edu/artl/article/23/1/1/2858/What-Is-Morphological-Computation-On-How-the-Body">Müller and Hoffmann - What is Norphological Computation?</a></p>
+     <p>  <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/4d/6d/4d6d60f3f610b9c6ce6fa63cad0094d379c528f7?response-content-disposition=inline%3B%20filename%3D%22gregory%20-%20Perceptions%20as%20Hypotheses.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T180618Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21582&X-Amz-Signature=3dbcedc5ae987acc2e4afd7756b276ecd66e16bc1ca035c1ddf1409d6bfdf23b">Gregory - Perceptions as Hypotheses</a></p>
+     <p>  <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/9b/11/9b11e39bdc3bc7e3a85a8bd51cdcfd0da80560bb?response-content-disposition=inline%3B%20filename%3D%22OCallaghan%20-%20Perception.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T180554Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21546&X-Amz-Signature=3bc316233af55d5510f53a0bc661c2bef96c3436ac39422756c07cdc423749c1">O'Callaghan - The Cambridge handbook of cognitive science. </a></p>
+    <p> <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/78/ac/78acec772912c6a094eb332e72b26b07d9a73a2a?response-content-disposition=inline%3B%20filename%3D%22231012_perception_reader.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T180710Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21590&X-Amz-Signature=e5966358577030501ebfebfd44ddc632b494efcc907c0b1be4c859d9eac82de0">RL Gregory - The Intelligent Eye</a></p>
+     <p> <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/78/ac/78acec772912c6a094eb332e72b26b07d9a73a2a?response-content-disposition=inline%3B%20filename%3D%22231012_perception_reader.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T180710Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21590&X-Amz-Signature=e5966358577030501ebfebfd44ddc632b494efcc907c0b1be4c859d9eac82de0">John Berger - Ways of Seeing</a></p>
+    <p class="generalText">WEEK 4</p>
+    <p><a class="generalTextb" href="https://blogs.warwick.ac.uk/morleyd/entry/don_patersons_the_1/">Don Patersons - The Art of Dark</a></p>
+    <p class="generalText">WEEK 5</p>
+    <p> <a class="generalTextb" href="https://groups.csail.mit.edu/mac/projects/amorphous/white-paper/amorph-new/amorph-new.html">Abelson, Knight, Sussman, and friends - Amorphous Computing (1996) </a></p>
+      <p><a class="generalTextb" href="https://www.bing.com/search?q=Laura+Tripaldi+-+Parallel+Minds%3A+Discovering+the+Intelligence+of+Materials+(2002)&cvid=d4e2a193eec94e49a4fc4ccc68361e96&gs_lcrp=EgZjaHJvbWUyBggAEEUYOTIGCAEQRRhA0gEHOTY1ajBqNKgCALACAA&FORM=ANAB01&PC=DCTS">Laura Tripaldi - Parallel Minds: Discovering the Intelligence of Materials (2002) </a>
+   <p> <a class="generalTextb" href="https://direct.mit.edu/books/book/2528/ProtocolHow-Control-Exists-after-Decentralization">Alexander Galoway - Protocol: How Control Exists After Decentralization</a></p>
+     <p><a class="generalTextb" href="https://pdfdrive.to/dl/physical-computation-a-mechanistic-account">Gualtiero Piccinini - Physical Computing, A Mechanistic Account</a></p>
+      <p> <a class="generalTextb" href="https://www.nytimes.com/2007/11/13/science/13traff.html">From Ants to People: An Instinct to a Swarm</a></p>        <p>  <a class="generalTextb" href="https://www.youtube.com/watch?v=TlysTnxF_6c">Quanta Magazine -  What is Emergence?</a></p>
+   <p class="generalText">WEEK 6</p>
+   <p> <a class="generalTextb" href="https://mitpress.mit.edu/9780262521123/vehicles/">Braitenberg - Vehicles: Experiments in Synthetic Psychology</a></p>
+    <p> <a class="generalTextb" href="https://www.nature.com/articles/s42256-019-0100-x">Norbert Wiener - Moth Mode</a></p>
+      <p> <a class="generalTextb" href="https://www.vice.com/en/article/xy4jyz/casey-reas-new-media-art-bitforms-15-years">Casey Reas - Path</a></p>
+   <p> <a class="generalTextb" href="https://exhibits.stanford.edu/cs/catalog/xx645fp8554">Gordon Pask - Physical Analogues to the Growth of a Concept </a></p>
+    <p class="generalText">WEEK 7</p>
+    <p>  <a class="generalTextb" href="https://pubmed.ncbi.nlm.nih.gov/27368639/">Pepperberg - Animal language studies: What happened?</a></p>
+      <p> <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/30/11/30113334e8cfd2b33487dd205da0fe5cf7039196?response-content-disposition=inline%3B%20filename%3D%22Ulrich%20Stegmann%20Animal%20Communication%20Theory.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T183144Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21556&X-Amz-Signature=db87323dfc3ac9f5254d1992c0023240aafae75cc392703d4b9ca5ad261c621e">Stegmann - Animal Communication Theory: Information and Influence</a></p>
+  <p>  <a class="generalTextb" href="https://ual-moodle-sitedata.s3.eu-west-2.amazonaws.com/67/42/6742d85f013c01b64a210e1017141947e984911b?response-content-disposition=inline%3B%20filename%3D%22krebs%20dawkins.pdf%22&response-content-type=application%2Fpdf&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIA2PCH3OG65JHUZNKL%2F20231115%2Feu-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231115T182813Z&X-Amz-SignedHeaders=host&X-Amz-Expires=21587&X-Amz-Signature=78cc66e90b457249f808139e4025e06f302c834a0597e75886f4f2d9cc6c87f2">Behavioral Ecology: An Evolutionary Approach </a></p>
+    <p> <a class="generalTextb" href="https://www.nature.com/scitable/knowledge/library/an-introduction-to-animal-communication-23648715/">An Introduction to Animal Communication </a> </p>
+    <p class="generalText">WEEK 9</p>
+    <p>  <a class="generalText" href="https://people.csail.mit.edu/brooks/papers/representation.pdf">Brooks, R - Intelligence without Representation. </a></p>
+<p> <a class="generalText" href="https://moodle.arts.ac.uk/course/view.php?id=80196"></a>Ian Cheng, Worlding Raga 2 - What is World?</p>
+<p> <a class="generalText" herf="https://moodle.arts.ac.uk/course/view.php?id=80196"></a>Christopher Alexander - Systems Generating Systems</p>
+</main>
+</body>
+
+</html>

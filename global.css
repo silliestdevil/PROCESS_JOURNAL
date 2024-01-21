@@ -1,0 +1,325 @@
+/* imports Inter, Noto Sans from Google Fonts (code copied from Google Fonts) */
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Noto+Sans+HK&family=Noto+Sans+JP&display=swap');
+
+/* define some variables for easy reuse inside the "root" pseudo-selector, this
+ * way we can easily change the main colors of the site without having to change
+ * them in a bunch of different selectors
+ *
+ * root doesn't select any actual HTML elements, it's just a holder we can use 
+ * for styles */
+:root {
+  --bg-color: white;
+  --fg-color: black;
+  --link-color: rgb(0, 0, 0);
+  
+}
+
+/* styles that affect everything on the page can go in 'html' */
+html {
+  font-family: 'Inter', 'Noto Sans HK', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--fg-color);
+}
+
+/* another pseudo-selector, for the box drawn when the user selects text */
+::selection {
+  background: var(--fg-color);
+  color: var(--bg-color);
+}
+
+a {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+main {
+  width: 900px;
+  /* the two value shorthand for the margin property accepts the "auto" keyword
+   * in this case, the second value is the horizonal margins and auto splits
+   * the available space equally between left and right, centering our element
+   */
+  margin: 0 auto;
+  padding: 40px ;
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+
+}
+
+header {
+  padding: 30px ;
+  padding-left: 40px;
+}
+
+
+nav > ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul.grid {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+ul.grid > li {
+  width: 100%;
+  text-align: center;
+  padding: 10 px;
+  opacity: 0.5;
+}
+
+ul.grid > li > img {
+  width: 100%;
+  aspect-ratio: 2.39;
+  height: auto;
+  object-fit: cover;
+  filter: blur(2px);
+  transition: all 0.3s ease;
+}
+ul.grid > li:hover > img {
+  filter: blur(0);
+  opacity: 1;
+}
+
+.borders {
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+}
+.borders:hover {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+}
+
+.p5embed {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  height: auto;
+}
+
+.byline {
+  text-align: right;
+  font-size: 12px;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.full-width {
+  width: 100%;
+}
+
+figcaption {
+  text-align: center;
+}
+
+
+.left {
+  float: left;
+  width: 50%;
+  padding: 1px;
+}
+
+.right {
+  margin-left: 60%;
+  width: 50%;
+  padding: 1px;
+}
+
+
+.rightText {
+  margin-left: 50%;
+  padding: 2px;
+  padding-right: 50px;
+  width:50%
+}
+
+.leftText {
+  float:left; 
+  width: 50%;
+  padding: 1px; 
+  padding-right: 7%;
+  
+}
+
+/* The sidebar menu */
+.sidebar {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Stay on top */
+  top: 0;
+  right: 0;
+  background-color:  rgb(202, 171, 171); /* Black*/
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 60px; /* Place content 60px from the top */
+  transition: 0.5s; /* 0.5 second transition effect to slide in the sidebar */
+}
+
+/* The sidebar links */
+.sidebar a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
+  color: #696262;
+  display: block;
+  transition: 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidebar a:hover {
+  color: rgba(209, 151, 151, 0.2);
+}
+
+/* Position and style the close button (top right corner) */
+.sidebar .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+/* The button used to open the sidebar */
+.openbtn {
+  font-family:'Courier New', Courier, monospace;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #ffffff;
+  color: rgb(109, 102, 102);
+  padding: 10px 15px;
+  border: none;
+  position: absolute;
+  right: 100px
+}
+
+.openbtn:hover {
+  color: #2e2c2c;
+ 
+}
+
+/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
+#main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidebar {padding-top: 15px;}
+  .sidebar a {font-size: 18px;}
+}
+
+.jumplink {
+  color: black;
+}
+
+.dateTitles {
+  color:black;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 20px;
+  font-weight: 520;
+}
+
+.subjectTitles {
+  color:black;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 18px;
+  font-weight: 520;
+}
+
+.generalText {
+  color:black;
+  font-family:'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: 520;
+}
+
+.generalTextb {
+  color:rgb(51, 35, 190);
+  font-family:'Courier New', Courier, monospace;
+  font-size: 15px;
+  font-weight: 520;
+}
+
+.bottom {
+  border-style: outset none none none;
+  padding: 20px;
+  
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  border: 0px solid #000;
+}
+
+.main {
+  transition: margin-left .5s; /* If you want a transition effect */
+  padding: 20px;
+}
+
+  
+.thumbnailstitle {
+  margin-top: 2px;
+  font-size: 10px;
+font-weight: normal;
+font: rgba(255, 255, 255,);
+font-family:'Courier New', Courier, monospace;
+
+}
+
+.folder{
+background-color:rgba(255, 255, 255, 0);
+border: 0px;
+
+
+}
+
+
+.thumbnail-container {
+position: relative;
+display: inline-block;
+border-radius: 1px;
+}
+
+ img:hover{
+-webkit-transition: all .3s ease-in;
+-moz-transition: all .3s ease-in;
+-ms-transition: all .3s ease-in;
+-o-transition: all .3s ease-in;
+transition: all .3s ease-in;
+opacity: 1;
+transform: scale(1.25);
+-ms-transform: scale(1.25); 
+ -webkit-transform: scale(1.25);  
+ }
+
+ .topLine{
+ border-style: outset none none none; 
+ border-color: rgb(102, 116, 116);
+ border-width: 10px;
+ }
+
+ .topLineA{
+  border-style: outset none none none; 
+  border-color: rgb(193, 136, 136);
+  border-width: 10px;
+  }
+ 
+ 
+.imagecenter {
+  padding-left: 20%;
+  padding-right: 20%;
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  }
+
